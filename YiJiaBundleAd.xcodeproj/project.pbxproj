@@ -1,0 +1,645 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF63F2B41D90FF5400155BA7 /* YiJiaBundleAd.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF63F2B31D90FF5400155BA7 /* YiJiaBundleAd.h */; };
+		FF63F2B61D90FF5400155BA7 /* YiJiaBundleAd.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2B51D90FF5400155BA7 /* YiJiaBundleAd.m */; };
+		FF63F2C41D90FF8E00155BA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2C31D90FF8E00155BA7 /* main.m */; };
+		FF63F2C71D90FF8E00155BA7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2C61D90FF8E00155BA7 /* AppDelegate.m */; };
+		FF63F2CA1D90FF8E00155BA7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2C91D90FF8E00155BA7 /* ViewController.m */; };
+		FF63F2CD1D90FF8E00155BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF63F2CB1D90FF8E00155BA7 /* Main.storyboard */; };
+		FF63F2CF1D90FF8E00155BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF63F2CE1D90FF8E00155BA7 /* Assets.xcassets */; };
+		FF63F2D21D90FF8E00155BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF63F2D01D90FF8E00155BA7 /* LaunchScreen.storyboard */; };
+		FF63F2F11D91015B00155BA7 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63F2DD1D91015B00155BA7 /* GoogleMobileAds.framework */; };
+		FF63F2F21D91015B00155BA7 /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63F2E01D91015B00155BA7 /* BaiduMobAdSDK.framework */; };
+		FF63F2F41D91015B00155BA7 /* libChanceAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63F2EF1D91015B00155BA7 /* libChanceAd.a */; };
+		FF63F2F71D91017D00155BA7 /* YJBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2F61D91017D00155BA7 /* YJBAdapter.m */; };
+		FF63F2FA1D91019A00155BA7 /* YJBAdapterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2F91D91019A00155BA7 /* YJBAdapterManager.m */; };
+		FF63F2FD1D9101C600155BA7 /* YJBAdmobAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2FC1D9101C600155BA7 /* YJBAdmobAdapter.m */; };
+		FF63F3001D9101E300155BA7 /* YJBBaiDuAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2FF1D9101E300155BA7 /* YJBBaiDuAdapter.m */; };
+		FF63F3031D9101F000155BA7 /* YJBChanceAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F3021D9101F000155BA7 /* YJBChanceAdapter.m */; };
+		FF63F3081D91039C00155BA7 /* YJBConfigData.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F3071D91039C00155BA7 /* YJBConfigData.m */; };
+		FF63F3121D9105DA00155BA7 /* NBLHTTPFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F30C1D9105DA00155BA7 /* NBLHTTPFileManager.m */; };
+		FF63F3131D9105DA00155BA7 /* NBLHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F30E1D9105DA00155BA7 /* NBLHTTPManager.m */; };
+		FF63F3141D9105DA00155BA7 /* UIImageView+NBL.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F3111D9105DA00155BA7 /* UIImageView+NBL.m */; };
+		FF63F3171D9110A400155BA7 /* YJBBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F3161D9110A400155BA7 /* YJBBannerView.m */; };
+		FF63F31A1D9110C700155BA7 /* YJBBannerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F3191D9110C700155BA7 /* YJBBannerManager.m */; };
+		FF63F31D1D9110D900155BA7 /* YJBInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F31C1D9110D900155BA7 /* YJBInterstitial.m */; };
+		FF63F3201D9110EC00155BA7 /* YJBInterstitialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F31F1D9110EC00155BA7 /* YJBInterstitialManager.m */; };
+		FF63F3211D91145A00155BA7 /* GoogleMobileAds.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF63F2DD1D91015B00155BA7 /* GoogleMobileAds.framework */; };
+		FF63F3221D91145A00155BA7 /* baidumobadsdk.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF63F2DF1D91015B00155BA7 /* baidumobadsdk.bundle */; };
+		FF63F3231D91145A00155BA7 /* BaiduMobAdSDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF63F2E01D91015B00155BA7 /* BaiduMobAdSDK.framework */; };
+		FF63F3241D91145A00155BA7 /* ChanceAdRes.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF63F2E61D91015B00155BA7 /* ChanceAdRes.bundle */; };
+		FF63F3251D91146700155BA7 /* YJBBannerView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF63F3151D9110A400155BA7 /* YJBBannerView.h */; };
+		FF63F3261D91146700155BA7 /* YJBInterstitial.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF63F31B1D9110D900155BA7 /* YJBInterstitial.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF63F2D71D90FFA100155BA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF63F2A81D90FF5400155BA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF63F2AF1D90FF5400155BA7;
+			remoteInfo = YiJiaBundleAd;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FF63F2AE1D90FF5400155BA7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "lib$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				FF63F3251D91146700155BA7 /* YJBBannerView.h in CopyFiles */,
+				FF63F3261D91146700155BA7 /* YJBInterstitial.h in CopyFiles */,
+				FF63F3211D91145A00155BA7 /* GoogleMobileAds.framework in CopyFiles */,
+				FF63F3221D91145A00155BA7 /* baidumobadsdk.bundle in CopyFiles */,
+				FF63F3231D91145A00155BA7 /* BaiduMobAdSDK.framework in CopyFiles */,
+				FF63F3241D91145A00155BA7 /* ChanceAdRes.bundle in CopyFiles */,
+				FF63F2B41D90FF5400155BA7 /* YiJiaBundleAd.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FF63F2B01D90FF5400155BA7 /* libYiJiaBundleAd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYiJiaBundleAd.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF63F2B31D90FF5400155BA7 /* YiJiaBundleAd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YiJiaBundleAd.h; sourceTree = "<group>"; };
+		FF63F2B51D90FF5400155BA7 /* YiJiaBundleAd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YiJiaBundleAd.m; sourceTree = "<group>"; };
+		FF63F2C01D90FF8E00155BA7 /* YiJiaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiJiaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF63F2C31D90FF8E00155BA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FF63F2C51D90FF8E00155BA7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FF63F2C61D90FF8E00155BA7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FF63F2C81D90FF8E00155BA7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FF63F2C91D90FF8E00155BA7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FF63F2CC1D90FF8E00155BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FF63F2CE1D90FF8E00155BA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF63F2D11D90FF8E00155BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF63F2D31D90FF8E00155BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF63F2DD1D91015B00155BA7 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		FF63F2DF1D91015B00155BA7 /* baidumobadsdk.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = baidumobadsdk.bundle; sourceTree = "<group>"; };
+		FF63F2E01D91015B00155BA7 /* BaiduMobAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMobAdSDK.framework; sourceTree = "<group>"; };
+		FF63F2E51D91015B00155BA7 /* ChanceAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChanceAd.h; sourceTree = "<group>"; };
+		FF63F2E61D91015B00155BA7 /* ChanceAdRes.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ChanceAdRes.bundle; sourceTree = "<group>"; };
+		FF63F2E71D91015B00155BA7 /* CSADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSADRequest.h; sourceTree = "<group>"; };
+		FF63F2E81D91015B00155BA7 /* CSBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSBannerView.h; sourceTree = "<group>"; };
+		FF63F2E91D91015B00155BA7 /* CSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSError.h; sourceTree = "<group>"; };
+		FF63F2EA1D91015B00155BA7 /* CSInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSInterstitial.h; sourceTree = "<group>"; };
+		FF63F2EB1D91015B00155BA7 /* CSNativeFeeds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSNativeFeeds.h; sourceTree = "<group>"; };
+		FF63F2EC1D91015B00155BA7 /* CSNativeFeedsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSNativeFeedsView.h; sourceTree = "<group>"; };
+		FF63F2ED1D91015B00155BA7 /* CSSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSplashAd.h; sourceTree = "<group>"; };
+		FF63F2EE1D91015B00155BA7 /* CSVideoAD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVideoAD.h; sourceTree = "<group>"; };
+		FF63F2EF1D91015B00155BA7 /* libChanceAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libChanceAd.a; sourceTree = "<group>"; };
+		FF63F2F51D91017D00155BA7 /* YJBAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBAdapter.h; sourceTree = "<group>"; };
+		FF63F2F61D91017D00155BA7 /* YJBAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBAdapter.m; sourceTree = "<group>"; };
+		FF63F2F81D91019A00155BA7 /* YJBAdapterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBAdapterManager.h; sourceTree = "<group>"; };
+		FF63F2F91D91019A00155BA7 /* YJBAdapterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBAdapterManager.m; sourceTree = "<group>"; };
+		FF63F2FB1D9101C600155BA7 /* YJBAdmobAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBAdmobAdapter.h; sourceTree = "<group>"; };
+		FF63F2FC1D9101C600155BA7 /* YJBAdmobAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBAdmobAdapter.m; sourceTree = "<group>"; };
+		FF63F2FE1D9101E300155BA7 /* YJBBaiDuAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBBaiDuAdapter.h; sourceTree = "<group>"; };
+		FF63F2FF1D9101E300155BA7 /* YJBBaiDuAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBBaiDuAdapter.m; sourceTree = "<group>"; };
+		FF63F3011D9101F000155BA7 /* YJBChanceAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBChanceAdapter.h; sourceTree = "<group>"; };
+		FF63F3021D9101F000155BA7 /* YJBChanceAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBChanceAdapter.m; sourceTree = "<group>"; };
+		FF63F3061D91039C00155BA7 /* YJBConfigData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBConfigData.h; sourceTree = "<group>"; };
+		FF63F3071D91039C00155BA7 /* YJBConfigData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBConfigData.m; sourceTree = "<group>"; };
+		FF63F30B1D9105DA00155BA7 /* NBLHTTPFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBLHTTPFileManager.h; sourceTree = "<group>"; };
+		FF63F30C1D9105DA00155BA7 /* NBLHTTPFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBLHTTPFileManager.m; sourceTree = "<group>"; };
+		FF63F30D1D9105DA00155BA7 /* NBLHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBLHTTPManager.h; sourceTree = "<group>"; };
+		FF63F30E1D9105DA00155BA7 /* NBLHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBLHTTPManager.m; sourceTree = "<group>"; };
+		FF63F3101D9105DA00155BA7 /* UIImageView+NBL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+NBL.h"; sourceTree = "<group>"; };
+		FF63F3111D9105DA00155BA7 /* UIImageView+NBL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+NBL.m"; sourceTree = "<group>"; };
+		FF63F3151D9110A400155BA7 /* YJBBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBBannerView.h; sourceTree = "<group>"; };
+		FF63F3161D9110A400155BA7 /* YJBBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBBannerView.m; sourceTree = "<group>"; };
+		FF63F3181D9110C700155BA7 /* YJBBannerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBBannerManager.h; sourceTree = "<group>"; };
+		FF63F3191D9110C700155BA7 /* YJBBannerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBBannerManager.m; sourceTree = "<group>"; };
+		FF63F31B1D9110D900155BA7 /* YJBInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBInterstitial.h; sourceTree = "<group>"; };
+		FF63F31C1D9110D900155BA7 /* YJBInterstitial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBInterstitial.m; sourceTree = "<group>"; };
+		FF63F31E1D9110EC00155BA7 /* YJBInterstitialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBInterstitialManager.h; sourceTree = "<group>"; };
+		FF63F31F1D9110EC00155BA7 /* YJBInterstitialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBInterstitialManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF63F2AD1D90FF5400155BA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF63F2F11D91015B00155BA7 /* GoogleMobileAds.framework in Frameworks */,
+				FF63F2F41D91015B00155BA7 /* libChanceAd.a in Frameworks */,
+				FF63F2F21D91015B00155BA7 /* BaiduMobAdSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF63F2BD1D90FF8E00155BA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF63F2A71D90FF5400155BA7 = {
+			isa = PBXGroup;
+			children = (
+				FF63F2C11D90FF8E00155BA7 /* YiJiaDemo */,
+				FF63F2B21D90FF5400155BA7 /* YiJiaBundleAd */,
+				FF63F2B11D90FF5400155BA7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF63F2B11D90FF5400155BA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF63F2B01D90FF5400155BA7 /* libYiJiaBundleAd.a */,
+				FF63F2C01D90FF8E00155BA7 /* YiJiaDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF63F2B21D90FF5400155BA7 /* YiJiaBundleAd */ = {
+			isa = PBXGroup;
+			children = (
+				FF63F3091D9105DA00155BA7 /* Tool */,
+				FF63F2D91D91015B00155BA7 /* AdPlatformLibs */,
+				FF63F3041D91038600155BA7 /* Banner */,
+				FF63F3051D91038600155BA7 /* Interstitial */,
+				FF63F3061D91039C00155BA7 /* YJBConfigData.h */,
+				FF63F3071D91039C00155BA7 /* YJBConfigData.m */,
+				FF63F2B31D90FF5400155BA7 /* YiJiaBundleAd.h */,
+				FF63F2B51D90FF5400155BA7 /* YiJiaBundleAd.m */,
+			);
+			path = YiJiaBundleAd;
+			sourceTree = "<group>";
+		};
+		FF63F2C11D90FF8E00155BA7 /* YiJiaDemo */ = {
+			isa = PBXGroup;
+			children = (
+				FF63F2C51D90FF8E00155BA7 /* AppDelegate.h */,
+				FF63F2C61D90FF8E00155BA7 /* AppDelegate.m */,
+				FF63F2C81D90FF8E00155BA7 /* ViewController.h */,
+				FF63F2C91D90FF8E00155BA7 /* ViewController.m */,
+				FF63F2CB1D90FF8E00155BA7 /* Main.storyboard */,
+				FF63F2CE1D90FF8E00155BA7 /* Assets.xcassets */,
+				FF63F2D01D90FF8E00155BA7 /* LaunchScreen.storyboard */,
+				FF63F2D31D90FF8E00155BA7 /* Info.plist */,
+				FF63F2C21D90FF8E00155BA7 /* Supporting Files */,
+			);
+			path = YiJiaDemo;
+			sourceTree = "<group>";
+		};
+		FF63F2C21D90FF8E00155BA7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FF63F2C31D90FF8E00155BA7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FF63F2D91D91015B00155BA7 /* AdPlatformLibs */ = {
+			isa = PBXGroup;
+			children = (
+				FF63F2DA1D91015B00155BA7 /* Admob */,
+				FF63F2DE1D91015B00155BA7 /* BaiDu */,
+				FF63F2E11D91015B00155BA7 /* Chance */,
+				FF63F2F51D91017D00155BA7 /* YJBAdapter.h */,
+				FF63F2F61D91017D00155BA7 /* YJBAdapter.m */,
+				FF63F2F81D91019A00155BA7 /* YJBAdapterManager.h */,
+				FF63F2F91D91019A00155BA7 /* YJBAdapterManager.m */,
+			);
+			path = AdPlatformLibs;
+			sourceTree = "<group>";
+		};
+		FF63F2DA1D91015B00155BA7 /* Admob */ = {
+			isa = PBXGroup;
+			children = (
+				FF63F2DD1D91015B00155BA7 /* GoogleMobileAds.framework */,
+				FF63F2FB1D9101C600155BA7 /* YJBAdmobAdapter.h */,
+				FF63F2FC1D9101C600155BA7 /* YJBAdmobAdapter.m */,
+			);
+			path = Admob;
+			sourceTree = "<group>";
+		};
+		FF63F2DE1D91015B00155BA7 /* BaiDu */ = {
+			isa = PBXGroup;
+			children = (
+				FF63F2DF1D91015B00155BA7 /* baidumobadsdk.bundle */,
+				FF63F2E01D91015B00155BA7 /* BaiduMobAdSDK.framework */,
+				FF63F2FE1D9101E300155BA7 /* YJBBaiDuAdapter.h */,
+				FF63F2FF1D9101E300155BA7 /* YJBBaiDuAdapter.m */,
+			);
+			path = BaiDu;
+			sourceTree = "<group>";
+		};
+		FF63F2E11D91015B00155BA7 /* Chance */ = {
+			isa = PBXGroup;
+			children = (
+				FF63F2E41D91015B00155BA7 /* libChanceAd */,
+				FF63F3011D9101F000155BA7 /* YJBChanceAdapter.h */,
+				FF63F3021D9101F000155BA7 /* YJBChanceAdapter.m */,
+			);
+			path = Chance;
+			sourceTree = "<group>";
+		};
+		FF63F2E41D91015B00155BA7 /* libChanceAd */ = {
+			isa = PBXGroup;
+			children = (
+				FF63F2E51D91015B00155BA7 /* ChanceAd.h */,
+				FF63F2E61D91015B00155BA7 /* ChanceAdRes.bundle */,
+				FF63F2E71D91015B00155BA7 /* CSADRequest.h */,
+				FF63F2E81D91015B00155BA7 /* CSBannerView.h */,
+				FF63F2E91D91015B00155BA7 /* CSError.h */,
+				FF63F2EA1D91015B00155BA7 /* CSInterstitial.h */,
+				FF63F2EB1D91015B00155BA7 /* CSNativeFeeds.h */,
+				FF63F2EC1D91015B00155BA7 /* CSNativeFeedsView.h */,
+				FF63F2ED1D91015B00155BA7 /* CSSplashAd.h */,
+				FF63F2EE1D91015B00155BA7 /* CSVideoAD.h */,
+				FF63F2EF1D91015B00155BA7 /* libChanceAd.a */,
+			);
+			path = libChanceAd;
+			sourceTree = "<group>";
+		};
+		FF63F3041D91038600155BA7 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				FF63F3151D9110A400155BA7 /* YJBBannerView.h */,
+				FF63F3161D9110A400155BA7 /* YJBBannerView.m */,
+				FF63F3181D9110C700155BA7 /* YJBBannerManager.h */,
+				FF63F3191D9110C700155BA7 /* YJBBannerManager.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		FF63F3051D91038600155BA7 /* Interstitial */ = {
+			isa = PBXGroup;
+			children = (
+				FF63F31B1D9110D900155BA7 /* YJBInterstitial.h */,
+				FF63F31C1D9110D900155BA7 /* YJBInterstitial.m */,
+				FF63F31E1D9110EC00155BA7 /* YJBInterstitialManager.h */,
+				FF63F31F1D9110EC00155BA7 /* YJBInterstitialManager.m */,
+			);
+			path = Interstitial;
+			sourceTree = "<group>";
+		};
+		FF63F3091D9105DA00155BA7 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				FF63F30A1D9105DA00155BA7 /* SimplifiedAFN */,
+				FF63F30F1D9105DA00155BA7 /* SimplifiedAFN+UIKit */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		FF63F30A1D9105DA00155BA7 /* SimplifiedAFN */ = {
+			isa = PBXGroup;
+			children = (
+				FF63F30B1D9105DA00155BA7 /* NBLHTTPFileManager.h */,
+				FF63F30C1D9105DA00155BA7 /* NBLHTTPFileManager.m */,
+				FF63F30D1D9105DA00155BA7 /* NBLHTTPManager.h */,
+				FF63F30E1D9105DA00155BA7 /* NBLHTTPManager.m */,
+			);
+			path = SimplifiedAFN;
+			sourceTree = "<group>";
+		};
+		FF63F30F1D9105DA00155BA7 /* SimplifiedAFN+UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				FF63F3101D9105DA00155BA7 /* UIImageView+NBL.h */,
+				FF63F3111D9105DA00155BA7 /* UIImageView+NBL.m */,
+			);
+			path = "SimplifiedAFN+UIKit";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF63F2AF1D90FF5400155BA7 /* YiJiaBundleAd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF63F2B91D90FF5400155BA7 /* Build configuration list for PBXNativeTarget "YiJiaBundleAd" */;
+			buildPhases = (
+				FF63F2AC1D90FF5400155BA7 /* Sources */,
+				FF63F2AD1D90FF5400155BA7 /* Frameworks */,
+				FF63F2AE1D90FF5400155BA7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YiJiaBundleAd;
+			productName = YiJiaBundleAd;
+			productReference = FF63F2B01D90FF5400155BA7 /* libYiJiaBundleAd.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		FF63F2BF1D90FF8E00155BA7 /* YiJiaDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF63F2D41D90FF8E00155BA7 /* Build configuration list for PBXNativeTarget "YiJiaDemo" */;
+			buildPhases = (
+				FF63F2BC1D90FF8E00155BA7 /* Sources */,
+				FF63F2BD1D90FF8E00155BA7 /* Frameworks */,
+				FF63F2BE1D90FF8E00155BA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF63F2D81D90FFA100155BA7 /* PBXTargetDependency */,
+			);
+			name = YiJiaDemo;
+			productName = YiJiaDemo;
+			productReference = FF63F2C01D90FF8E00155BA7 /* YiJiaDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF63F2A81D90FF5400155BA7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = 1JiaGame;
+				TargetAttributes = {
+					FF63F2AF1D90FF5400155BA7 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					FF63F2BF1D90FF8E00155BA7 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = FF63F2AB1D90FF5400155BA7 /* Build configuration list for PBXProject "YiJiaBundleAd" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF63F2A71D90FF5400155BA7;
+			productRefGroup = FF63F2B11D90FF5400155BA7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF63F2BF1D90FF8E00155BA7 /* YiJiaDemo */,
+				FF63F2AF1D90FF5400155BA7 /* YiJiaBundleAd */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF63F2BE1D90FF8E00155BA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF63F2D21D90FF8E00155BA7 /* LaunchScreen.storyboard in Resources */,
+				FF63F2CF1D90FF8E00155BA7 /* Assets.xcassets in Resources */,
+				FF63F2CD1D90FF8E00155BA7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF63F2AC1D90FF5400155BA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF63F2F71D91017D00155BA7 /* YJBAdapter.m in Sources */,
+				FF63F2FD1D9101C600155BA7 /* YJBAdmobAdapter.m in Sources */,
+				FF63F3171D9110A400155BA7 /* YJBBannerView.m in Sources */,
+				FF63F31A1D9110C700155BA7 /* YJBBannerManager.m in Sources */,
+				FF63F3001D9101E300155BA7 /* YJBBaiDuAdapter.m in Sources */,
+				FF63F3141D9105DA00155BA7 /* UIImageView+NBL.m in Sources */,
+				FF63F3131D9105DA00155BA7 /* NBLHTTPManager.m in Sources */,
+				FF63F31D1D9110D900155BA7 /* YJBInterstitial.m in Sources */,
+				FF63F3031D9101F000155BA7 /* YJBChanceAdapter.m in Sources */,
+				FF63F2FA1D91019A00155BA7 /* YJBAdapterManager.m in Sources */,
+				FF63F3081D91039C00155BA7 /* YJBConfigData.m in Sources */,
+				FF63F3201D9110EC00155BA7 /* YJBInterstitialManager.m in Sources */,
+				FF63F3121D9105DA00155BA7 /* NBLHTTPFileManager.m in Sources */,
+				FF63F2B61D90FF5400155BA7 /* YiJiaBundleAd.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF63F2BC1D90FF8E00155BA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF63F2CA1D90FF8E00155BA7 /* ViewController.m in Sources */,
+				FF63F2C71D90FF8E00155BA7 /* AppDelegate.m in Sources */,
+				FF63F2C41D90FF8E00155BA7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF63F2D81D90FFA100155BA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF63F2AF1D90FF5400155BA7 /* YiJiaBundleAd */;
+			targetProxy = FF63F2D71D90FFA100155BA7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FF63F2CB1D90FF8E00155BA7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF63F2CC1D90FF8E00155BA7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FF63F2D01D90FF8E00155BA7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF63F2D11D90FF8E00155BA7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FF63F2B71D90FF5400155BA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FF63F2B81D90FF5400155BA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF63F2BA1D90FF5400155BA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/Admob",
+					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/BaiDu",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/Chance/libChanceAd",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FF63F2BB1D90FF5400155BA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/Admob",
+					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/BaiDu",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/Chance/libChanceAd",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FF63F2D51D90FF8E00155BA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YiJiaDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangjh.YiJiaDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF63F2D61D90FF8E00155BA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YiJiaDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangjh.YiJiaDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF63F2AB1D90FF5400155BA7 /* Build configuration list for PBXProject "YiJiaBundleAd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF63F2B71D90FF5400155BA7 /* Debug */,
+				FF63F2B81D90FF5400155BA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF63F2B91D90FF5400155BA7 /* Build configuration list for PBXNativeTarget "YiJiaBundleAd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF63F2BA1D90FF5400155BA7 /* Debug */,
+				FF63F2BB1D90FF5400155BA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF63F2D41D90FF8E00155BA7 /* Build configuration list for PBXNativeTarget "YiJiaDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF63F2D51D90FF8E00155BA7 /* Debug */,
+				FF63F2D61D90FF8E00155BA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF63F2A81D90FF5400155BA7 /* Project object */;
+}
