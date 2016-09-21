@@ -50,7 +50,7 @@
     if (self.superview) {
         // 开发者调用过loadAd，则开始加载Banner
         if (self.startLoad) {
-            [self loadAd];
+            [self startAd];
         }
     }
     // 当前BannerView的superview不存在，就不再请求新广告了
@@ -76,7 +76,7 @@
                 [self stopRequestBanner];
             }
             else {
-                [self loadAd];
+                [self startAd];
             }
         }
     }
@@ -85,8 +85,8 @@
 
 #pragma mark - Public
 
-// 加载广告
-- (void)loadAd
+// 开始展现广告
+- (void)startAd
 {
     self.startLoad = YES;
     // 父视图不存在即未展现，则不加载广告
@@ -134,9 +134,12 @@
 
 - (void)startRequestBanner
 {
-    // 非激活状态不请求广告
+    // 非激活状态不请求广告，1秒后重新调用这个方法
     if ([UIApplication sharedApplication].applicationState != UIApplicationStateActive) {
-        [self startTwoTimer];
+        __weak typeof(self) weakSelf = self;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [weakSelf startRequestBanner];
+        });
         return;
     }
     [self.adManager showBannerOn:self withDisplayTime:[YJBConfigData sharedInstance].displayTime];
@@ -162,8 +165,8 @@
         });
         return;
     }
-    [NSObject cancelPreviousPerformRequestsWithTarget:self];
     
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
     // 指定时间后隐藏广告
     [self performSelector:@selector(hideBannerViewForTimer) withObject:nil
                afterDelay:[YJBConfigData sharedInstance].displayTime];

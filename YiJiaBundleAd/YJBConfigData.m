@@ -9,10 +9,9 @@
 #import "YJBConfigData.h"
 #import <UIKit/UIKit.h>
 #import "NBLHTTPManager.h"
+#import "YiJiaBundleAd.h"
 #import "YJBAdapterManager.h"
 
-
-#define FilePath_AllConfig  [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"YiJiaBundleAd_allconfig.plist"]
 
 @interface YJBConfigData () {
     // 权重二维数组
@@ -38,6 +37,8 @@
     self = [super init];
     if (self) {
         _configIsRequesting = NO;
+        _requestInterval = 15;
+        _displayTime = 15;
         // app激活通知
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifAppDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
     }
@@ -104,6 +105,36 @@
             NSLog(@"错误数据：%@", error);
         }
     }];
+}
+
+// 填充广告参数
+- (void)fillAdParam:(YJBAdapter *)yjbAdapter
+{
+    switch (yjbAdapter.platformType) {
+        case YJBAdPlatform_Chance:
+            [yjbAdapter setAdParams:self.dicChanceConfig];
+            break;
+        case YJBAdPlatform_Admob:
+            [yjbAdapter setAdParams:self.dicAdmobConfig];
+            break;
+        case YJBAdPlatform_BaiDu:
+            [yjbAdapter setAdParams:self.dicBaiDuConfig];
+            break;
+        default:
+            break;
+    }
+}
+
+// 设置Banner的权重参数
+- (void)fillBannerWeight:(unsigned int[])bannerWeights
+{
+    memcpy(bannerWeights, _bannerWeights, sizeof(_bannerWeights));
+}
+
+// 设置插屏的权重参数
+- (void)fillInterstitialWeight:(unsigned int[])interstitialWeights
+{
+    memcpy(interstitialWeights, _popupWeights, sizeof(_popupWeights));
 }
 
 

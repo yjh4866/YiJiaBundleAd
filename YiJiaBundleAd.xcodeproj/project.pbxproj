@@ -13,6 +13,8 @@
 		FF615B121D9254C0005DA068 /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63F2E01D91015B00155BA7 /* BaiduMobAdSDK.framework */; };
 		FF615B141D9254CF005DA068 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF615B131D9254CF005DA068 /* CoreLocation.framework */; };
 		FF615B161D9254D9005DA068 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FF615B151D9254D9005DA068 /* libc++.tbd */; };
+		FF615B191D925C9B005DA068 /* YJBConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF615B181D925C9B005DA068 /* YJBConfigManager.m */; };
+		FF615B3E1D927DC8005DA068 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF615B3D1D927DC8005DA068 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FF63F2B41D90FF5400155BA7 /* YiJiaBundleAd.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF63F2B31D90FF5400155BA7 /* YiJiaBundleAd.h */; };
 		FF63F2B61D90FF5400155BA7 /* YiJiaBundleAd.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2B51D90FF5400155BA7 /* YiJiaBundleAd.m */; };
 		FF63F2C41D90FF8E00155BA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2C31D90FF8E00155BA7 /* main.m */; };
@@ -78,6 +80,9 @@
 		FF615B0F1D9254A9005DA068 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		FF615B131D9254CF005DA068 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FF615B151D9254D9005DA068 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		FF615B171D925C9B005DA068 /* YJBConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBConfigManager.h; sourceTree = "<group>"; };
+		FF615B181D925C9B005DA068 /* YJBConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBConfigManager.m; sourceTree = "<group>"; };
+		FF615B3D1D927DC8005DA068 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		FF63F2B01D90FF5400155BA7 /* libYiJiaBundleAd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYiJiaBundleAd.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF63F2B31D90FF5400155BA7 /* YiJiaBundleAd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YiJiaBundleAd.h; sourceTree = "<group>"; };
 		FF63F2B51D90FF5400155BA7 /* YiJiaBundleAd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YiJiaBundleAd.m; sourceTree = "<group>"; };
@@ -148,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF615B3E1D927DC8005DA068 /* WebKit.framework in Frameworks */,
 				FF615B161D9254D9005DA068 /* libc++.tbd in Frameworks */,
 				FF615B141D9254CF005DA068 /* CoreLocation.framework in Frameworks */,
 				FF615B101D9254A9005DA068 /* libz.tbd in Frameworks */,
@@ -163,6 +169,7 @@
 		FF63F2A71D90FF5400155BA7 = {
 			isa = PBXGroup;
 			children = (
+				FF615B3D1D927DC8005DA068 /* WebKit.framework */,
 				FF615B151D9254D9005DA068 /* libc++.tbd */,
 				FF615B131D9254CF005DA068 /* CoreLocation.framework */,
 				FF615B0F1D9254A9005DA068 /* libz.tbd */,
@@ -190,6 +197,8 @@
 				FF63F3051D91038600155BA7 /* Interstitial */,
 				FF63F3061D91039C00155BA7 /* YJBConfigData.h */,
 				FF63F3071D91039C00155BA7 /* YJBConfigData.m */,
+				FF615B171D925C9B005DA068 /* YJBConfigManager.h */,
+				FF615B181D925C9B005DA068 /* YJBConfigManager.m */,
 				FF63F2B31D90FF5400155BA7 /* YiJiaBundleAd.h */,
 				FF63F2B51D90FF5400155BA7 /* YiJiaBundleAd.m */,
 			);
@@ -427,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF63F2F71D91017D00155BA7 /* YJBAdapter.m in Sources */,
+				FF615B191D925C9B005DA068 /* YJBConfigManager.m in Sources */,
 				FF63F2FD1D9101C600155BA7 /* YJBAdmobAdapter.m in Sources */,
 				FF63F3171D9110A400155BA7 /* YJBBannerView.m in Sources */,
 				FF63F31A1D9110C700155BA7 /* YJBBannerManager.m in Sources */,
@@ -613,6 +623,7 @@
 					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/BaiDu",
 				);
 				INFOPLIST_FILE = YiJiaDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yangjh.YiJiaDemo;
@@ -631,6 +642,7 @@
 					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/BaiDu",
 				);
 				INFOPLIST_FILE = YiJiaDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yangjh.YiJiaDemo;

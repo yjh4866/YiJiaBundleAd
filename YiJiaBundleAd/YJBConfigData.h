@@ -21,4 +21,13 @@
 // 请求各平台配置
 - (void)requestPlatformConfig;
 
+// 填充广告参数
+- (void)fillAdParam:(YJBAdapter *)yjbAdapter;
+
+// 设置Banner的权重参数
+- (void)fillBannerWeight:(unsigned int[])bannerWeights;
+
+// 设置插屏的权重参数
+- (void)fillInterstitialWeight:(unsigned int[])interstitialWeights;
+
 @end

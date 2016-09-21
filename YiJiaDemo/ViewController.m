@@ -19,6 +19,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    [YiJiaBundleAd setTestDevicesForAdmob:@[@"232438c1ecfe57ce4f5fa05015ced793"]];
+    
+    YJBBannerView *bannerView = [[YJBBannerView alloc] initWithFrame:CGRectZero];
+    [self.view addSubview:bannerView];
+    [bannerView startAd];
 }
 
 - (void)didReceiveMemoryWarning {

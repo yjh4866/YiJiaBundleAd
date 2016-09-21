@@ -10,6 +10,10 @@
 #import "YJBBannerView.h"
 #import "YJBInterstitial.h"
 
+
+#define FilePath_AllConfig  [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"YiJiaBundleAd_allconfig.plist"]
+
+
 @interface YiJiaBundleAd : NSObject
 
 /**

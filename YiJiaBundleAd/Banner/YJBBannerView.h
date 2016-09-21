@@ -17,8 +17,8 @@
 
 @property (nonatomic, weak) id <YJBBannerViewDelegate> delegate;
 
-// 加载广告
-- (void)loadAd;
+// 开始展现广告
+- (void)startAd;
 
 @end
 
