@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF615B0E1D92548C005DA068 /* libYiJiaBundleAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63F2B01D90FF5400155BA7 /* libYiJiaBundleAd.a */; };
+		FF615B101D9254A9005DA068 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FF615B0F1D9254A9005DA068 /* libz.tbd */; };
+		FF615B111D9254C0005DA068 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63F2DD1D91015B00155BA7 /* GoogleMobileAds.framework */; };
+		FF615B121D9254C0005DA068 /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63F2E01D91015B00155BA7 /* BaiduMobAdSDK.framework */; };
+		FF615B141D9254CF005DA068 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF615B131D9254CF005DA068 /* CoreLocation.framework */; };
+		FF615B161D9254D9005DA068 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FF615B151D9254D9005DA068 /* libc++.tbd */; };
 		FF63F2B41D90FF5400155BA7 /* YiJiaBundleAd.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF63F2B31D90FF5400155BA7 /* YiJiaBundleAd.h */; };
 		FF63F2B61D90FF5400155BA7 /* YiJiaBundleAd.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2B51D90FF5400155BA7 /* YiJiaBundleAd.m */; };
 		FF63F2C41D90FF8E00155BA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2C31D90FF8E00155BA7 /* main.m */; };
@@ -69,6 +75,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FF615B0F1D9254A9005DA068 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		FF615B131D9254CF005DA068 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FF615B151D9254D9005DA068 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		FF63F2B01D90FF5400155BA7 /* libYiJiaBundleAd.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libYiJiaBundleAd.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF63F2B31D90FF5400155BA7 /* YiJiaBundleAd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YiJiaBundleAd.h; sourceTree = "<group>"; };
 		FF63F2B51D90FF5400155BA7 /* YiJiaBundleAd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YiJiaBundleAd.m; sourceTree = "<group>"; };
@@ -139,6 +148,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF615B161D9254D9005DA068 /* libc++.tbd in Frameworks */,
+				FF615B141D9254CF005DA068 /* CoreLocation.framework in Frameworks */,
+				FF615B101D9254A9005DA068 /* libz.tbd in Frameworks */,
+				FF615B111D9254C0005DA068 /* GoogleMobileAds.framework in Frameworks */,
+				FF615B121D9254C0005DA068 /* BaiduMobAdSDK.framework in Frameworks */,
+				FF615B0E1D92548C005DA068 /* libYiJiaBundleAd.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +163,9 @@
 		FF63F2A71D90FF5400155BA7 = {
 			isa = PBXGroup;
 			children = (
+				FF615B151D9254D9005DA068 /* libc++.tbd */,
+				FF615B131D9254CF005DA068 /* CoreLocation.framework */,
+				FF615B0F1D9254A9005DA068 /* libz.tbd */,
 				FF63F2C11D90FF8E00155BA7 /* YiJiaDemo */,
 				FF63F2B21D90FF5400155BA7 /* YiJiaBundleAd */,
 				FF63F2B11D90FF5400155BA7 /* Products */,
@@ -589,8 +607,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/Admob",
+					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/BaiDu",
+				);
 				INFOPLIST_FILE = YiJiaDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yangjh.YiJiaDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -601,8 +625,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/Admob",
+					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/BaiDu",
+				);
 				INFOPLIST_FILE = YiJiaDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yangjh.YiJiaDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

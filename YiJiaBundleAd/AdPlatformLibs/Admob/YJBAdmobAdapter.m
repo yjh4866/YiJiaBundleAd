@@ -8,7 +8,14 @@
 
 #import "YJBAdmobAdapter.h"
 
+@import GoogleMobileAds;
+
 @implementation YJBAdmobAdapter
+
++ (void)load
+{
+    NSLog(@"当前Admob SDK版本：%@", [GADRequest sdkVersion]);
+}
 
 + (instancetype)sharedInstance
 {

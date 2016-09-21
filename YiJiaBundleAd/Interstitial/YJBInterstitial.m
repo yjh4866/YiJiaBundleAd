@@ -10,4 +10,17 @@
 
 @implementation YJBInterstitial
 
+
+#pragma mark - Public
+
++ (instancetype)sharedInstance
+{
+    static YJBInterstitial *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[YJBInterstitial alloc] init];
+    });
+    return sharedInstance;
+}
+
 @end

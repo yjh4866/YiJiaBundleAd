@@ -21,10 +21,4 @@
 // 请求各平台配置
 - (void)requestPlatformConfig;
 
-// 查看指定平台的Banner参数是否有配置
-- (BOOL)bannerParamIsExistWithPlatformType:(YJBAdPlatform)platformType;
-
-// 查看指定平台的插屏参数是否有配置
-- (BOOL)interstitialParamIsExistWithPlatformType:(YJBAdPlatform)platformType;
-
 @end

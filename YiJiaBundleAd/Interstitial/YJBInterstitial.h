@@ -10,4 +10,6 @@
 
 @interface YJBInterstitial : NSObject
 
++ (instancetype)sharedInstance;
+
 @end

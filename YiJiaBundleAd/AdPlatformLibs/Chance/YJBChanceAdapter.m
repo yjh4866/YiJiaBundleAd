@@ -7,8 +7,14 @@
 //
 
 #import "YJBChanceAdapter.h"
+#import "ChanceAd.h"
 
 @implementation YJBChanceAdapter
+
++ (void)load
+{
+    NSLog(@"当前畅思广告SDK版本：%@", [ChanceAd sdkVersion]);
+}
 
 + (instancetype)sharedInstance
 {

@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YJBBannerView.h"
+#import "YJBInterstitial.h"
 
 @interface YiJiaBundleAd : NSObject
+
+/**
+ *  为Admob广告设置测试设备
+ *
+ *  @param testDevices 测试设备id列表
+ */
++ (void)setTestDevicesForAdmob:(NSArray<NSString *> *)testDevices;
 
 @end

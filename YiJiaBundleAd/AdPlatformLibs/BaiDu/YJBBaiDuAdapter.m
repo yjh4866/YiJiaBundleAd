@@ -7,8 +7,14 @@
 //
 
 #import "YJBBaiDuAdapter.h"
+#import <BaiduMobAdSDK/BaiduMobAdCommonConfig.h>
 
 @implementation YJBBaiDuAdapter
+
++ (void)load
+{
+    NSLog(@"当前百度广告SDK版本：%@", SDK_VERSION_IN_MSSP);
+}
 
 + (instancetype)sharedInstance
 {

@@ -10,4 +10,7 @@
 
 @interface YJBAdmobAdapter : YJBAdapter
 
+/// Test ads will be returned for devices with device IDs specified in this array.
+@property(nonatomic, copy) NSArray *testDevices;
+
 @end

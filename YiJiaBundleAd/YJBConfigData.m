@@ -19,13 +19,19 @@
     unsigned int _bannerWeights[YJBAdPlatform_Count];
     unsigned int _popupWeights[YJBAdPlatform_Count];
 }
-@property (nonatomic, strong) NSDictionary *dicBannerConfig;
-@property (nonatomic, strong) NSDictionary *dicPopupConfig;
+@property (nonatomic, strong) NSDictionary *dicChanceConfig;
+@property (nonatomic, strong) NSDictionary *dicAdmobConfig;
+@property (nonatomic, strong) NSDictionary *dicBaiDuConfig;
 
 @property (nonatomic, assign) NSTimeInterval timeConfig;
 @end
 
 @implementation YJBConfigData
+
++ (void)load
+{
+    [[YJBConfigData sharedInstance] notifAppDidBecomeActive:nil];
+}
 
 - (instancetype)init
 {
@@ -80,7 +86,7 @@
 
     _configIsRequesting = YES;
     // 从服务器读权重配置数据
-    NSString *urlConfig = [NSString stringWithFormat:@"http://www.1jiagame.com/app/%@/BundleAdConfig.json", [NSBundle mainBundle].bundleIdentifier];
+    NSString *urlConfig = [NSString stringWithFormat:@"http://www.1jiagame.com/app/%@/BundleAdConfig.php", [NSBundle mainBundle].bundleIdentifier];
     [[NBLHTTPManager sharedManager] requestObject:NBLResponseObjectType_JSON fromURL:urlConfig withParam:nil andResult:^(NSHTTPURLResponse *httpResponse, id responseObject, NSError *error, NSDictionary *dicParam) {
         _configIsRequesting = NO;
         NSDictionary *dicAllConfig = responseObject;
@@ -100,48 +106,93 @@
     }];
 }
 
-// 查看指定平台的Banner参数是否有配置
-- (BOOL)bannerParamIsExistWithPlatformType:(YJBAdPlatform)platformType
-{
-    NSString *platformKey = [[YJBAdapterManager sharedInstance] platformKeyOf:platformType];
-    return [self bannerParamIsExistWithPlatformKey:platformKey];
-}
-// 查看指定平台的Banner参数是否有配置
-- (BOOL)bannerParamIsExistWithPlatformKey:(NSString *)platformKey
-{
-    NSDictionary *dicPlatformConfig = self.dicBannerConfig[platformKey];
-    if ([dicPlatformConfig respondsToSelector:@selector(count)]
-        && dicPlatformConfig.count > 0) {
-        return YES;
-    }
-    return NO;
-}
-
-// 查看指定平台的插屏参数是否有配置
-- (BOOL)interstitialParamIsExistWithPlatformType:(YJBAdPlatform)platformType
-{
-    NSString *platformKey = [[YJBAdapterManager sharedInstance] platformKeyOf:platformType];
-    return [self interstitialParamIsExistWithPlatformKey:platformKey];
-}
-// 查看指定平台的插屏参数是否有配置
-- (BOOL)interstitialParamIsExistWithPlatformKey:(NSString *)platformKey
-{
-    NSDictionary *dicPlatformConfig = self.dicPopupConfig[platformKey];
-    if ([dicPlatformConfig respondsToSelector:@selector(count)] &&
-        dicPlatformConfig.count > 0) {
-        return YES;
-    }
-    return NO;
-}
-
 
 #pragma mark - Private
 
 - (BOOL)parseFromAllConfig:(NSDictionary *)dicAllConfig
 {
+    // 获取当前版本的配置
+    NSDictionary *dicConfig = [self getCurrentConfigFromAllConfig:dicAllConfig];
+    // 开始解析配置
+    if (dicConfig && [dicConfig isKindOfClass:NSDictionary.self]) {
+        // 根据当前设备类型提取相应的配置
+        UIUserInterfaceIdiom deviceType = UI_USER_INTERFACE_IDIOM();
+        if (UIUserInterfaceIdiomPhone == deviceType) {
+            dicConfig = dicConfig[@"iPhone"];
+        }
+        else if (UIUserInterfaceIdiomPhone == deviceType) {
+            dicConfig = dicConfig[@"iPad"];
+        }
+        else {
+            return NO;
+        }
+        if (dicConfig && [dicConfig isKindOfClass:NSDictionary.self]) {
+            // Banner广告请求间隔
+            _requestInterval = [NSString stringWithFormat:@"%@", dicConfig[@"ri"]].intValue;
+            if (_requestInterval < 5) {
+                _requestInterval = 5;
+            }
+            // Banner广告展现时长
+            _displayTime = [NSString stringWithFormat:@"%@", dicConfig[@"st"]].intValue;
+            if (_displayTime < 5) {
+                _displayTime = 5;
+            }
+            
+            // 清空权重表
+            memset(_bannerWeights, 0, YJBAdPlatform_Count*sizeof(unsigned int));
+            memset(_popupWeights, 0, YJBAdPlatform_Count*sizeof(unsigned int));
+            // 解析畅思平台参数
+            NSDictionary *dic = dicConfig[@"Chance"];
+            if ([dic isKindOfClass:NSDictionary.class]) {
+                self.dicChanceConfig = dic;
+                // 权重处理
+                _bannerWeights[YJBAdPlatform_Chance] = [NSString stringWithFormat:@"%@", dic[@"bw"]].intValue;
+                _popupWeights[YJBAdPlatform_Chance] = [NSString stringWithFormat:@"%@", dic[@"iw"]].intValue;
+            }
+            // 解析Admob平台参数
+            dic = dicConfig[@"Admob"];
+            if ([dic isKindOfClass:NSDictionary.class]) {
+                self.dicAdmobConfig = dic;
+                // 权重处理
+                _bannerWeights[YJBAdPlatform_Admob] = [NSString stringWithFormat:@"%@", dic[@"bw"]].intValue;
+                _popupWeights[YJBAdPlatform_Admob] = [NSString stringWithFormat:@"%@", dic[@"iw"]].intValue;
+            }
+            // 解析百度平台参数
+            dic = dicConfig[@"BaiDu"];
+            if ([dic isKindOfClass:NSDictionary.class]) {
+                self.dicBaiDuConfig = dic;
+                // 权重处理
+                _bannerWeights[YJBAdPlatform_BaiDu] = [NSString stringWithFormat:@"%@", dic[@"bw"]].intValue;
+                _popupWeights[YJBAdPlatform_BaiDu] = [NSString stringWithFormat:@"%@", dic[@"iw"]].intValue;
+            }
+            // 解析无广告权重
+            dic = dicConfig[@"None"];
+            if ([dic isKindOfClass:NSDictionary.class]) {
+                // 权重处理
+                _bannerWeights[YJBAdPlatform_None] = [NSString stringWithFormat:@"%@", dic[@"bw"]].intValue;
+                _popupWeights[YJBAdPlatform_None] = [NSString stringWithFormat:@"%@", dic[@"iw"]].intValue;
+            }
+            // 权重求和
+            _bannerWeights[0] = 0;
+            for (int i = 1; i < YJBAdPlatform_Count; i++) {
+                _bannerWeights[0] += _bannerWeights[i];
+            }
+            _popupWeights[0] = 0;
+            for (int i = 1; i < YJBAdPlatform_Count; i++) {
+                _popupWeights[0] += _popupWeights[i];
+            }
+            return YES;
+        }
+    }
+    return NO;
+}
+
+// 获取当前版本的配置
+- (NSDictionary *)getCurrentConfigFromAllConfig:(NSDictionary *)dicAllConfig
+{
     NSString *appVersion = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
     if (dicAllConfig.count == 0 || appVersion.length == 0) {
-        return NO;
+        return nil;
     }
     // 根据当前app版本号取对应的配置
     NSDictionary *dicConfig = dicAllConfig[appVersion];
@@ -225,120 +276,7 @@
             dicConfig = dicAllConfig[strKeyConfig];
         }
     }
-    // 开始解析配置
-    if (dicConfig && [dicConfig isKindOfClass:NSDictionary.self]) {
-        // Banner广告请求间隔
-        _requestInterval = [NSString stringWithFormat:@"%@", dicConfig[@"ri"]].intValue;
-        if (_requestInterval < 5) {
-            _requestInterval = 5;
-        }
-        // Banner广告展现时长
-        _displayTime = [NSString stringWithFormat:@"%@", dicConfig[@"st"]].intValue;
-        if (_displayTime < 5) {
-            _displayTime = 5;
-        }
-        // 必须先解析平台参数，后解析权重，因为有配置才需要计算权重
-        return [self parsePlatformParam:dicConfig[@"param"]] &&
-        [self parseWeightConfig:dicConfig[@"weight"]];
-    }
-    return NO;
-}
-
-// 解析平台广告参数配置
-- (BOOL)parsePlatformParam:(NSDictionary *)dicPlatformParam
-{
-    if (dicPlatformParam && ![dicPlatformParam isKindOfClass:NSDictionary.class])
-        return NO;
-    // 配置参数检查
-    NSDictionary *dicBannerConfig = dicPlatformParam[@"banner"];
-    NSDictionary *dicPopupConfig = dicPlatformParam[@"popup"];
-    if ((dicBannerConfig && ![dicBannerConfig isKindOfClass:NSDictionary.class]) ||
-        (dicPopupConfig && ![dicPopupConfig isKindOfClass:NSDictionary.class])) {
-        return NO;
-    }
-    // 未配置
-    if (dicBannerConfig.count < 1 || dicPopupConfig.count < 1) {
-        return NO;
-    }
-    self.dicBannerConfig = dicBannerConfig;
-    self.dicPopupConfig = dicPopupConfig;
-    return YES;
-}
-
-// 解析权重配置
-- (BOOL)parseWeightConfig:(NSDictionary *)dicWeightConfig
-{
-    if (![dicWeightConfig isKindOfClass:NSDictionary.class])
-        return NO;
-    NSDictionary *dicBannerConfig = dicWeightConfig[@"banner"];
-    if (dicBannerConfig && ![dicBannerConfig isKindOfClass:NSDictionary.class]) {
-        return NO;
-    }
-    NSDictionary *dicPopupConfig = dicWeightConfig[@"popup"];
-    if (dicPopupConfig && ![dicPopupConfig isKindOfClass:NSDictionary.class]) {
-        return NO;
-    }
-    // 获取Banner广告配置比例，计算权重二维表
-    [self parseBannerWeightConfig:dicBannerConfig];
-    // 获取插屏广告配置比例，计算权重二维表
-    [self parseInterstitialWeightConfig:dicPopupConfig];
-    return YES;
-}
-// 获取Banner配置比例，计算权重二维表
-- (void)parseBannerWeightConfig:(NSDictionary *)dicBannerConfig
-{
-    memset(_bannerWeights, 0, YJBAdPlatform_Count*sizeof(unsigned int));
-    for (NSString *platformKey in dicBannerConfig.allKeys) {
-        if (![platformKey isKindOfClass:NSString.class]) {
-            continue;
-        }
-        // 该平台未配置
-        if (![self bannerParamIsExistWithPlatformKey:platformKey]) {
-            continue;
-        }
-        // 根据广告平台名称获取广告平台标识
-        YJBAdPlatform platformType = [[YJBAdapterManager sharedInstance] platformTypeOf:platformKey];
-        // 不认识该广告平台，或该广告平台不存在则不计算权重分配
-        YJBAdapter *csbAdapter = [YJBAdapterManager getAdapterOfADPlatform:platformType];
-        if (nil == csbAdapter || ![csbAdapter bannerEnabled]) {
-            continue;
-        }
-        // 获取广告平台的小时数配置
-        _bannerWeights[platformType] = [NSString stringWithFormat:@"%@", dicBannerConfig[platformKey]].intValue;
-    }
-    // 求权重之和
-    _bannerWeights[0] = 0;
-    for (int i = 1; i < YJBAdPlatform_Count; i++) {
-        _bannerWeights[0] += _bannerWeights[i];
-    }
-}
-// 获取插屏广告配置比例，计算权重二维表
-- (void)parseInterstitialWeightConfig:(NSDictionary *)dicPopupConfig
-{
-    memset(_popupWeights, 0, YJBAdPlatform_Count*sizeof(unsigned int));
-    for (NSString *platformKey in dicPopupConfig.allKeys) {
-        if (![platformKey isKindOfClass:NSString.class]) {
-            continue;
-        }
-        // 该平台未配置
-        if (![self interstitialParamIsExistWithPlatformKey:platformKey]) {
-            continue;
-        }
-        // 根据广告平台名称获取广告平台标识
-        YJBAdPlatform platformType = [[YJBAdapterManager sharedInstance] platformTypeOf:platformKey];
-        // 不认识该广告平台，或该广告平台不存在则不计算权重分配
-        YJBAdapter *csbAdapter = [YJBAdapterManager getAdapterOfADPlatform:platformType];
-        if (nil == csbAdapter || ![csbAdapter bannerEnabled]) {
-            continue;
-        }
-        // 获取广告平台的小时数配置
-        _popupWeights[platformType] = [NSString stringWithFormat:@"%@", dicPopupConfig[platformKey]].intValue;
-    }
-    // 求权重之和
-    _popupWeights[0] = 0;
-    for (int i = 1; i < YJBAdPlatform_Count; i++) {
-        _popupWeights[0] += _popupWeights[i];
-    }
+    return dicConfig;
 }
 
 @end
