@@ -59,8 +59,4 @@ fastlane/screenshots
 
 iOSInjectionProject/
 
-YiJiaBundleAd/AdPlatformLibs/Admob/GoogleMobileAds.framework/Versions/A/GoogleMobileAds
 
-YiJiaBundleAd/AdPlatformLibs/BaiDu/BaiduMobAdSDK.framework/Libraries/libBaiduMobAdSDK.a
-
-YiJiaBundleAd/AdPlatformLibs/Chance/libChanceAd/libChanceAd.a
