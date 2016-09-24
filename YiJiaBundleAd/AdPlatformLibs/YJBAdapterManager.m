@@ -7,13 +7,12 @@
 //
 
 #import "YJBAdapterManager.h"
-#import "YJBChanceAdapter.h"
 #import "YJBAdmobAdapter.h"
 #import "YJBBaiDuAdapter.h"
+#import "YJBChanceAdapter.h"
+#import "YJBGDTAdapter.h"
 
 @interface YJBAdapterManager ()
-@property (nonatomic, strong) NSDictionary *dicPlatformTypeKey;
-@property (nonatomic, strong) NSDictionary *dicPlatformKeyType;
 @property (nonatomic, strong) NSDictionary *dicPlatformTypeName;
 @end
 
@@ -23,24 +22,12 @@
 {
     self = [super init];
     if (self) {
-        // 平台类型与平台关键字对应表
-        self.dicPlatformTypeKey = @{@(YJBAdPlatform_None): @"none",
-                                    @(YJBAdPlatform_Chance): @"chance",
-                                    @(YJBAdPlatform_Admob): @"admob",
-                                    @(YJBAdPlatform_BaiDu): @"baidu"};
-        // 平台关键字与平台类型对应表
-        NSMutableDictionary *mdicPlatformNameType = [NSMutableDictionary dictionary];
-        NSArray *arrPlatformType = [self.dicPlatformTypeKey allKeys];
-        for (NSNumber *NSPlatformType in arrPlatformType) {
-            NSString *platformName = self.dicPlatformTypeKey[NSPlatformType];
-            [mdicPlatformNameType setObject:NSPlatformType forKey:platformName];
-        }
-        self.dicPlatformKeyType = mdicPlatformNameType;
         // 平台类型与平台名称对应表
         self.dicPlatformTypeName = @{@(YJBAdPlatform_None): @"无广告",
-                                     @(YJBAdPlatform_Chance): @"畅思",
+                                     @(YJBAdPlatform_Admob): @"Admob",
                                      @(YJBAdPlatform_BaiDu): @"百度",
-                                     @(YJBAdPlatform_Admob): @"Admob"};
+                                     @(YJBAdPlatform_Chance): @"畅思",
+                                     @(YJBAdPlatform_GDT): @"广点通"};
     }
     return self;
 }
@@ -63,34 +50,22 @@
 {
     YJBAdapter *adapter = nil;
     switch (platformType) {
-        case YJBAdPlatform_Chance:
-            adapter = [YJBChanceAdapter sharedInstance];
+        case YJBAdPlatform_Admob:
+            adapter = [YJBAdmobAdapter sharedInstance];
             break;
         case YJBAdPlatform_BaiDu:
             adapter = [YJBBaiDuAdapter sharedInstance];
             break;
-        case YJBAdPlatform_Admob:
-            adapter = [YJBAdmobAdapter sharedInstance];
+        case YJBAdPlatform_Chance:
+            adapter = [YJBChanceAdapter sharedInstance];
+            break;
+        case YJBAdPlatform_GDT:
+            adapter = [YJBGDTAdapter sharedInstance];
             break;
         default:
             break;
     }
     return adapter;
-}
-
-// 根据广告平台关键字查询广告平台类型
-- (YJBAdPlatform)platformTypeOf:(NSString *)platformKey
-{
-    if (![platformKey isKindOfClass:NSString.class]) {
-        return YJBAdPlatform_None;
-    }
-    return (YJBAdPlatform)[self.dicPlatformKeyType[platformKey] unsignedIntValue];
-}
-
-// 根据广告平台类型查询广告平台关键字
-- (NSString *)platformKeyOf:(YJBAdPlatform)platformType
-{
-    return self.dicPlatformTypeKey[@(platformType)];
 }
 
 // 根据广告平台类型查询广告平台名称

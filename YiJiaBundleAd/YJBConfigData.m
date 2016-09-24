@@ -18,9 +18,10 @@
     unsigned int _bannerWeights[YJBAdPlatform_Count];
     unsigned int _popupWeights[YJBAdPlatform_Count];
 }
-@property (nonatomic, strong) NSDictionary *dicChanceConfig;
 @property (nonatomic, strong) NSDictionary *dicAdmobConfig;
 @property (nonatomic, strong) NSDictionary *dicBaiDuConfig;
+@property (nonatomic, strong) NSDictionary *dicChanceConfig;
+@property (nonatomic, strong) NSDictionary *dicGDTConfig;
 
 @property (nonatomic, assign) NSTimeInterval timeConfig;
 @end
@@ -111,14 +112,17 @@
 - (void)fillAdParam:(YJBAdapter *)yjbAdapter
 {
     switch (yjbAdapter.platformType) {
-        case YJBAdPlatform_Chance:
-            [yjbAdapter setAdParams:self.dicChanceConfig];
-            break;
         case YJBAdPlatform_Admob:
             [yjbAdapter setAdParams:self.dicAdmobConfig];
             break;
         case YJBAdPlatform_BaiDu:
             [yjbAdapter setAdParams:self.dicBaiDuConfig];
+            break;
+        case YJBAdPlatform_Chance:
+            [yjbAdapter setAdParams:self.dicChanceConfig];
+            break;
+        case YJBAdPlatform_GDT:
+            [yjbAdapter setAdParams:self.dicGDTConfig];
             break;
         default:
             break;
@@ -172,16 +176,8 @@
             // 清空权重表
             memset(_bannerWeights, 0, YJBAdPlatform_Count*sizeof(unsigned int));
             memset(_popupWeights, 0, YJBAdPlatform_Count*sizeof(unsigned int));
-            // 解析畅思平台参数
-            NSDictionary *dic = dicConfig[@"Chance"];
-            if ([dic isKindOfClass:NSDictionary.class]) {
-                self.dicChanceConfig = dic;
-                // 权重处理
-                _bannerWeights[YJBAdPlatform_Chance] = [NSString stringWithFormat:@"%@", dic[@"bw"]].intValue;
-                _popupWeights[YJBAdPlatform_Chance] = [NSString stringWithFormat:@"%@", dic[@"iw"]].intValue;
-            }
             // 解析Admob平台参数
-            dic = dicConfig[@"Admob"];
+            NSDictionary *dic = dicConfig[@"Admob"];
             if ([dic isKindOfClass:NSDictionary.class]) {
                 self.dicAdmobConfig = dic;
                 // 权重处理
@@ -195,6 +191,22 @@
                 // 权重处理
                 _bannerWeights[YJBAdPlatform_BaiDu] = [NSString stringWithFormat:@"%@", dic[@"bw"]].intValue;
                 _popupWeights[YJBAdPlatform_BaiDu] = [NSString stringWithFormat:@"%@", dic[@"iw"]].intValue;
+            }
+            // 解析畅思平台参数
+            dic = dicConfig[@"Chance"];
+            if ([dic isKindOfClass:NSDictionary.class]) {
+                self.dicChanceConfig = dic;
+                // 权重处理
+                _bannerWeights[YJBAdPlatform_Chance] = [NSString stringWithFormat:@"%@", dic[@"bw"]].intValue;
+                _popupWeights[YJBAdPlatform_Chance] = [NSString stringWithFormat:@"%@", dic[@"iw"]].intValue;
+            }
+            // 解析广点通平台参数
+            dic = dicConfig[@"GDT"];
+            if ([dic isKindOfClass:NSDictionary.class]) {
+                self.dicGDTConfig = dic;
+                // 权重处理
+                _bannerWeights[YJBAdPlatform_GDT] = [NSString stringWithFormat:@"%@", dic[@"bw"]].intValue;
+                _popupWeights[YJBAdPlatform_GDT] = [NSString stringWithFormat:@"%@", dic[@"iw"]].intValue;
             }
             // 解析无广告权重
             dic = dicConfig[@"None"];

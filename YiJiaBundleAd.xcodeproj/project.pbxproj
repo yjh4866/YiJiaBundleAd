@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B17B35711D96550200D94390 /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B17B35701D96550200D94390 /* libGDTMobSDK.a */; };
+		B17B35741D96552900D94390 /* YJBGDTAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = B17B35731D96552900D94390 /* YJBGDTAdapter.m */; };
 		FF615B0E1D92548C005DA068 /* libYiJiaBundleAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63F2B01D90FF5400155BA7 /* libYiJiaBundleAd.a */; };
 		FF615B101D9254A9005DA068 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FF615B0F1D9254A9005DA068 /* libz.tbd */; };
 		FF615B111D9254C0005DA068 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63F2DD1D91015B00155BA7 /* GoogleMobileAds.framework */; };
@@ -77,6 +79,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B17B356B1D96550200D94390 /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
+		B17B356C1D96550200D94390 /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
+		B17B356D1D96550200D94390 /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
+		B17B356E1D96550200D94390 /* GDTSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAd.h; sourceTree = "<group>"; };
+		B17B356F1D96550200D94390 /* GDTTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTTrack.h; sourceTree = "<group>"; };
+		B17B35701D96550200D94390 /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
+		B17B35721D96552900D94390 /* YJBGDTAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBGDTAdapter.h; sourceTree = "<group>"; };
+		B17B35731D96552900D94390 /* YJBGDTAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBGDTAdapter.m; sourceTree = "<group>"; };
 		FF615B0F1D9254A9005DA068 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		FF615B131D9254CF005DA068 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FF615B151D9254D9005DA068 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -146,6 +156,7 @@
 				FF63F2F11D91015B00155BA7 /* GoogleMobileAds.framework in Frameworks */,
 				FF63F2F41D91015B00155BA7 /* libChanceAd.a in Frameworks */,
 				FF63F2F21D91015B00155BA7 /* BaiduMobAdSDK.framework in Frameworks */,
+				B17B35711D96550200D94390 /* libGDTMobSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +177,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B17B35691D96550200D94390 /* GDT */ = {
+			isa = PBXGroup;
+			children = (
+				B17B356A1D96550200D94390 /* libGDT */,
+				B17B35721D96552900D94390 /* YJBGDTAdapter.h */,
+				B17B35731D96552900D94390 /* YJBGDTAdapter.m */,
+			);
+			path = GDT;
+			sourceTree = "<group>";
+		};
+		B17B356A1D96550200D94390 /* libGDT */ = {
+			isa = PBXGroup;
+			children = (
+				B17B356B1D96550200D94390 /* GDTMobBannerView.h */,
+				B17B356C1D96550200D94390 /* GDTMobInterstitial.h */,
+				B17B356D1D96550200D94390 /* GDTNativeAd.h */,
+				B17B356E1D96550200D94390 /* GDTSplashAd.h */,
+				B17B356F1D96550200D94390 /* GDTTrack.h */,
+				B17B35701D96550200D94390 /* libGDTMobSDK.a */,
+			);
+			path = libGDT;
+			sourceTree = "<group>";
+		};
 		FF63F2A71D90FF5400155BA7 = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +269,7 @@
 				FF63F2DA1D91015B00155BA7 /* Admob */,
 				FF63F2DE1D91015B00155BA7 /* BaiDu */,
 				FF63F2E11D91015B00155BA7 /* Chance */,
+				B17B35691D96550200D94390 /* GDT */,
 				FF63F2F51D91017D00155BA7 /* YJBAdapter.h */,
 				FF63F2F61D91017D00155BA7 /* YJBAdapter.m */,
 				FF63F2F81D91019A00155BA7 /* YJBAdapterManager.h */,
@@ -450,6 +485,7 @@
 				FF63F3201D9110EC00155BA7 /* YJBInterstitialManager.m in Sources */,
 				FF63F3121D9105DA00155BA7 /* NBLHTTPFileManager.m in Sources */,
 				FF63F2B61D90FF5400155BA7 /* YiJiaBundleAd.m in Sources */,
+				B17B35741D96552900D94390 /* YJBGDTAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +623,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/Chance/libChanceAd",
+					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/GDT/libGDT",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -606,6 +643,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/Chance/libChanceAd",
+					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/GDT/libGDT",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
