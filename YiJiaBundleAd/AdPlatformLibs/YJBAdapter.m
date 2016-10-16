@@ -29,6 +29,12 @@
 // 移除Banner
 - (void)removeBanner {}
 
+// 加载插屏广告
+- (BOOL)loadInterstitial { return NO; }
+
+// 显示插屏广告
+- (void)showInterstitial {}
+
 // 获取顶层VC
 - (UIViewController *)topVC
 {

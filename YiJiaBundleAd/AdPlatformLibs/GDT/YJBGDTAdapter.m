@@ -10,11 +10,14 @@
 #import "GDTMobBannerView.h"
 #import "GDTMobInterstitial.h"
 
-@interface YJBGDTAdapter () <GDTMobBannerViewDelegate, GDTMobInterstitialDelegate>
+@interface YJBGDTAdapter () <GDTMobBannerViewDelegate, GDTMobInterstitialDelegate> {
+    BOOL _interstitialIsLoading;
+}
 @property (nonatomic, copy) NSString *appKey;
 @property (nonatomic, copy) NSString *placeIdB;
 @property (nonatomic, copy) NSString *placeIdI;
 @property (nonatomic, strong) GDTMobBannerView *gdtBannerView;
+@property (nonatomic, strong) GDTMobInterstitial *gdtInterstitial;
 @end
 
 @implementation YJBGDTAdapter
@@ -43,6 +46,17 @@
     return YJBAdPlatform_GDT;
 }
 
+// 插屏是否加载中
+- (BOOL)interstitialIsLoading
+{
+    return _interstitialIsLoading;
+}
+// 插屏广告是否准备好了
+- (BOOL)interstitialIsReady
+{
+    return self.gdtInterstitial && self.gdtInterstitial.isReady;
+}
+
 // 设置广告平台参数
 - (void)setAdParams:(NSDictionary *)dicParam
 {
@@ -57,7 +71,7 @@
 // 显示Banner
 - (BOOL)showBannerOn:(UIView *)bannerSuperView withDisplayTime:(NSTimeInterval)displayTime
 {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showBannerViewTimeout) object:nil];
     if (self.appKey.length > 0 && self.placeIdB.length > 0) {
         self.gdtBannerView.delegate = nil;
         [self.gdtBannerView removeFromSuperview];
@@ -70,7 +84,7 @@
         // 加载广告
         [self.gdtBannerView loadAdAndShow];
         // 超时处理
-        [self performSelector:@selector(showBannerViewTimeout) withObject:nil afterDelay:10];
+        [self performSelector:@selector(showBannerViewTimeout) withObject:nil afterDelay:5];
         return YES;
     }
     return NO;
@@ -79,10 +93,39 @@
 // 移除Banner
 - (void)removeBanner
 {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showBannerViewTimeout) object:nil];
     self.gdtBannerView.delegate = nil;
     [self.gdtBannerView removeFromSuperview];
     self.gdtBannerView = nil;
+}
+
+// 加载插屏广告
+- (BOOL)loadInterstitial;
+{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loadInterstitialTimeout) object:nil];
+    if (self.appKey.length > 0 && self.placeIdI.length > 0) {
+        self.gdtInterstitial.delegate = nil;
+        if (nil == self.gdtInterstitial || !self.gdtInterstitial.isReady) {
+            self.gdtInterstitial = [[GDTMobInterstitial alloc] initWithAppkey:self.appKey placementId:self.placeIdI];
+        }
+        self.gdtInterstitial.delegate = self;
+        // 加载
+        [self.gdtInterstitial loadAd];
+        _interstitialIsLoading = YES;
+        // 超时处理
+        [self performSelector:@selector(loadInterstitialTimeout) withObject:nil afterDelay:5];
+        return YES;
+    }
+    else {
+        _interstitialIsLoading = NO;
+    }
+    return NO;
+}
+
+// 显示插屏广告
+- (void)showInterstitial
+{
+    [self.gdtInterstitial presentFromRootViewController:[self topVC]];
 }
 
 
@@ -108,8 +151,8 @@
  */
 - (void)bannerViewFailToReceived:(NSError *)error
 {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self];
-    [self.bannerDelegate yjbAdapter:self bannerShowFailure:error.localizedDescription];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showBannerViewTimeout) object:nil];
+    [self.bannerDelegate yjbAdapter:self bannerShowFailure:error];
 }
 
 /**
@@ -134,7 +177,7 @@
  */
 - (void)bannerViewWillExposure
 {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showBannerViewTimeout) object:nil];
     [self.bannerDelegate yjbAdapterBannerShowSuccess:self];
 }
 /**
@@ -175,6 +218,115 @@
 }
 
 
+#pragma mark - GDTMobInterstitialDelegate
+
+/**
+ *  广告预加载成功回调
+ *  详解:当接收服务器返回的广告数据成功后调用该函数
+ */
+- (void)interstitialSuccessToLoadAd:(GDTMobInterstitial *)interstitial
+{
+    _interstitialIsLoading = NO;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loadInterstitialTimeout) object:nil];
+    [self.interstitialDelegate yjbAdapterInterstitialLoadSuccess:self];
+}
+
+/**
+ *  广告预加载失败回调
+ *  详解:当接收服务器返回的广告数据失败后调用该函数
+ */
+- (void)interstitialFailToLoadAd:(GDTMobInterstitial *)interstitial error:(NSError *)error
+{
+    _interstitialIsLoading = NO;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loadInterstitialTimeout) object:nil];
+    [self.interstitialDelegate yjbAdapter:self interstitialLoadFailure:error];
+}
+
+/**
+ *  插屏广告将要展示回调
+ *  详解: 插屏广告即将展示回调该函数
+ */
+- (void)interstitialWillPresentScreen:(GDTMobInterstitial *)interstitial
+{
+    
+}
+
+/**
+ *  插屏广告视图展示成功回调
+ *  详解: 插屏广告展示成功回调该函数
+ */
+- (void)interstitialDidPresentScreen:(GDTMobInterstitial *)interstitial
+{
+    [self.interstitialDelegate yjbAdapterInterstitialShowSuccess:self];
+}
+
+/**
+ *  插屏广告展示结束回调
+ *  详解: 插屏广告展示结束回调该函数
+ */
+- (void)interstitialDidDismissScreen:(GDTMobInterstitial *)interstitial
+{
+    [self.interstitialDelegate yjbAdapterInterstitialCloseFinished:self];
+}
+
+/**
+ *  应用进入后台时回调
+ *  详解: 当点击下载应用时会调用系统程序打开，应用切换到后台
+ */
+- (void)interstitialApplicationWillEnterBackground:(GDTMobInterstitial *)interstitial
+{
+    
+}
+
+/**
+ *  插屏广告曝光回调
+ */
+- (void)interstitialWillExposure:(GDTMobInterstitial *)interstitial
+{
+    
+}
+
+/**
+ *  插屏广告点击回调
+ */
+- (void)interstitialClicked:(GDTMobInterstitial *)interstitial
+{
+    [self.interstitialDelegate yjbAdapterInterstitialClicked:self];
+}
+
+/**
+ *  点击插屏广告以后即将弹出全屏广告页
+ */
+- (void)interstitialAdWillPresentFullScreenModal:(GDTMobInterstitial *)interstitial
+{
+    
+}
+
+/**
+ *  点击插屏广告以后弹出全屏广告页
+ */
+- (void)interstitialAdDidPresentFullScreenModal:(GDTMobInterstitial *)interstitial
+{
+    
+}
+
+/**
+ *  全屏广告页将要关闭
+ */
+- (void)interstitialAdWillDismissFullScreenModal:(GDTMobInterstitial *)interstitial
+{
+    
+}
+
+/**
+ *  全屏广告页被关闭
+ */
+- (void)interstitialAdDidDismissFullScreenModal:(GDTMobInterstitial *)interstitial
+{
+    
+}
+
+
 #pragma mark - Private
 
 - (void)showBannerViewTimeout
@@ -182,7 +334,17 @@
     self.gdtBannerView.delegate = nil;
     [self.gdtBannerView removeFromSuperview];
     self.gdtBannerView = nil;
-    [self.bannerDelegate yjbAdapter:self bannerShowFailure:@"超时"];
+    //
+    NSError *error = [NSError errorWithDomain:@"YiJiaBundle" code:0 userInfo:@{NSLocalizedDescriptionKey: @"超时"}];
+    [self.bannerDelegate yjbAdapter:self bannerShowFailure:error];
+    self.bannerDelegate = nil;
+}
+
+- (void)loadInterstitialTimeout
+{
+    NSError *error = [NSError errorWithDomain:@"YiJiaBundle" code:0 userInfo:@{NSLocalizedDescriptionKey: @"超时"}];
+    [self.interstitialDelegate yjbAdapter:self interstitialLoadFailure:error];
+    self.interstitialDelegate = nil;
 }
 
 @end

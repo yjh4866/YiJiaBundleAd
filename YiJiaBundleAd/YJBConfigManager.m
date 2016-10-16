@@ -34,6 +34,20 @@
     return [self assignPlatformWith:_bannerWeights];
 }
 
+// 给插屏广告分配广告平台
+- (YJBAdPlatform)reassignPlatformForInterstitialAndExclude:(YJBAdPlatform)exclude
+{
+    // 权重调整
+    if (exclude >= YJBAdPlatform_None && exclude < YJBAdPlatform_Count) {
+        _popupWeights[0] -= _popupWeights[exclude];
+        _popupWeights[exclude] = 0;
+    }
+    else {
+        [[YJBConfigData sharedInstance] fillInterstitialWeight:_popupWeights];
+    }
+    return [self assignPlatformWith:_popupWeights];
+}
+
 
 #pragma mark - Private
 

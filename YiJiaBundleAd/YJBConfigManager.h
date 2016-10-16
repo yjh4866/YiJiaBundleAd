@@ -14,4 +14,7 @@
 // 给Banner分配广告平台
 - (YJBAdPlatform)reassignPlatformForBannerAndExclude:(YJBAdPlatform)exclude;
 
+// 给插屏广告分配广告平台
+- (YJBAdPlatform)reassignPlatformForInterstitialAndExclude:(YJBAdPlatform)exclude;
+
 @end

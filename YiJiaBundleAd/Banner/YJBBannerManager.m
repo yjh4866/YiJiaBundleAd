@@ -39,11 +39,14 @@
 {
     self.bannerSuperView = bannerSuperView;
     self.displayTime = displayTime;
-    // 分配广告平台
+    // 置空以便重新分配
     [self.currentAdapter removeBanner];
+    self.currentAdapter.bannerDelegate = nil;
     self.currentAdapter = nil;
-    if (![self reassignAdPlatform]) {
-        [self.delegate yjbBannerManager:self showBannerFailure:@"分配失败"];
+    // 分配广告平台
+    if (![self assignAdPlatformAndShowBanner]) {
+        NSError *error = [NSError errorWithDomain:@"YiJiaBundle" code:0 userInfo:@{NSLocalizedDescriptionKey: @"分配失败"}];
+        [self.delegate yjbBannerManager:self showBannerFailure:error];
     }
 }
 
@@ -64,10 +67,11 @@
 }
 
 // 展现Banner失败
-- (void)yjbAdapter:(YJBAdapter *)yjbAdapter bannerShowFailure:(NSString *)errorMsg
+- (void)yjbAdapter:(YJBAdapter *)yjbAdapter bannerShowFailure:(NSError *)error;
 {
-    if (![self reassignAdPlatform]) {
-        [self.delegate yjbBannerManager:self showBannerFailure:@"分配失败"];
+    if (![self assignAdPlatformAndShowBanner]) {
+        NSError *error = [NSError errorWithDomain:@"YiJiaBundle" code:0 userInfo:@{NSLocalizedDescriptionKey: @"分配失败"}];
+        [self.delegate yjbBannerManager:self showBannerFailure:error];
     }
 }
 
@@ -80,7 +84,7 @@
 
 #pragma mark - Private
 
-- (BOOL)reassignAdPlatform
+- (BOOL)assignAdPlatformAndShowBanner
 {
     // 重新分配Banner广告平台
     YJBAdPlatform platformType = [self.configManager reassignPlatformForBannerAndExclude:self.currentAdapter.platformType];
@@ -94,7 +98,7 @@
         [[YJBConfigData sharedInstance] fillAdParam:self.currentAdapter];
         // 显示Banner失败则重新分配广告平台
         if (![self.currentAdapter showBannerOn:self.bannerSuperView withDisplayTime:self.displayTime]) {
-            return [self reassignAdPlatform];
+            return [self assignAdPlatformAndShowBanner];
         }
     }
     // 分配到不显示广告，按展现成功算，以便继续后续广告请求

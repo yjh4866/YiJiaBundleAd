@@ -31,7 +31,7 @@
 - (void)yjbBannerManagerShowSuccess:(YJBBannerManager *)adManager;
 
 // Banner广告展现失败
-- (void)yjbBannerManager:(YJBBannerManager *)adManager showBannerFailure:(NSString *)errorMsg;
+- (void)yjbBannerManager:(YJBBannerManager *)adManager showBannerFailure:(NSError *)error;
 
 // Banner广告被点击
 - (void)yjbBannerManagerClicked:(YJBBannerManager *)adManager;

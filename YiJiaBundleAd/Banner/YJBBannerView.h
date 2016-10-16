@@ -31,7 +31,7 @@
 - (void)yjbBannerViewShowSuccess;
 
 // Banner广告展现失败
-- (void)yjbBannerViewShowFailure:(NSString *)errorMsg;
+- (void)yjbBannerViewShowFailure:(NSError *)error;
 
 // Banner广告被移除
 - (void)yjbBannerViewRemoved;

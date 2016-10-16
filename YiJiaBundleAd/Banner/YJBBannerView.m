@@ -114,10 +114,10 @@
 }
 
 // Banner广告展现失败
-- (void)yjbBannerManager:(YJBBannerManager *)adManager showBannerFailure:(NSString *)errorMsg
+- (void)yjbBannerManager:(YJBBannerManager *)adManager showBannerFailure:(NSError *)error
 {
     if ([self.delegate respondsToSelector:@selector(yjbBannerViewShowFailure:)]) {
-        [self.delegate yjbBannerViewShowFailure:errorMsg];
+        [self.delegate yjbBannerViewShowFailure:error];
     }
     // 启动两个计时器，停止展现和下次请求
     [self startTwoTimer];
