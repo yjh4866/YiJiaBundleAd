@@ -119,8 +119,8 @@
         _originFrame = frame;
         _state = INIT;
         _isFullScreen = NO;
-        _url = [[NSURL URLWithString: object.videoURLString]retain];
-        _associatedObject = [object retain];
+        _url = [NSURL URLWithString: object.videoURLString];
+        _associatedObject = object;
         _isFirstTimePlay = YES;
         self.hidden = YES;
         _isAutoPlay = YES;
@@ -147,7 +147,6 @@
     self.player = nil;
     self.playerLayer = nil;
     self.originSuperView = nil;
-    [super dealloc];
 }
 
 
@@ -169,7 +168,7 @@
     self.backgroundColor = [UIColor blackColor];
     
     if (!self.indicatorView) {
-        self.indicatorView =  [[[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite]autorelease];
+        self.indicatorView =  [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
         self.indicatorView.frame = CGRectMake(self.displayView.frame.size.width/2 - 20, self.displayView.frame.size.height/2 - 20, 40, 40);
     } else {
         [self.indicatorView removeFromSuperview];
@@ -178,7 +177,7 @@
 
     
     if (!self.controlView) {
-        self.controlView = [[[UIView alloc]init]autorelease];
+        self.controlView = [[UIView alloc]init];
         self.controlView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4];
         self.controlView.hidden = YES;
         [self.displayView addSubview:self.controlView];
@@ -191,14 +190,14 @@
     self.controlView.frame = CGRectMake(0, self.displayView.frame.size.height - 32, self.displayView.frame.size.width, 32);
 
     if (!self.btnPlayOrPause) {
-        self.btnPlayOrPause = [[[UIButton alloc]initWithFrame:CGRectMake(10, 2, 32, 32)]autorelease];
+        self.btnPlayOrPause = [[UIButton alloc]initWithFrame:CGRectMake(10, 2, 32, 32)];
         [_btnPlayOrPause setImage:[self imageResoureForName:@"player_play"] forState:UIControlStateNormal];
         [_btnPlayOrPause addTarget:self action:@selector(playClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.controlView addSubview:_btnPlayOrPause];
     }
     
     if (!self.btnFullScreen) {
-        self.btnFullScreen = [[[UIButton alloc]init]autorelease];
+        self.btnFullScreen = [[UIButton alloc]init];
         [_btnFullScreen setImage:[self imageResoureForName:@"fullscreen"] forState:UIControlStateNormal];
         [_btnFullScreen addTarget:self action:@selector(clickFullScreen:) forControlEvents:UIControlEventTouchUpInside];
         [_controlView addSubview:_btnFullScreen];
@@ -208,7 +207,7 @@
     [self addProgressObserver];
     
     if (!self.btnDone) {
-        self.btnDone = [[[UIButton alloc]initWithFrame:CGRectMake(15, 5, 32, 32)]autorelease];
+        self.btnDone = [[UIButton alloc]initWithFrame:CGRectMake(15, 5, 32, 32)];
         [_btnDone setImage:[self imageResoureForName:@"player_back"] forState:UIControlStateNormal];
         [_btnDone addTarget:self action:@selector(clickFullScreen:) forControlEvents:UIControlEventTouchUpInside];
         _btnDone.hidden = YES;
@@ -220,7 +219,7 @@
     
     
     if (!self.btnLP) {
-        self.btnLP = [[[UIButton alloc]init]autorelease];
+        self.btnLP = [[UIButton alloc]init];
 
         BaiduMobNativeAdActionType type = _associatedObject.actType;
         if (type == BaiduMobNativeAdActionTypeDL) {
@@ -398,7 +397,7 @@
 
 - (void)startPlayback {
     
-    self.tapGesture = [[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapGesture:)]autorelease];
+    self.tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTapGesture:)];
     [self addGestureRecognizer:self.tapGesture];
     
     self.metaLoaded = NO;
@@ -590,7 +589,7 @@
     if (!self.progress) {
          UIImage *thumbImage = [self imageResoureForName:@"slider"];
 
-        self.progress = [[[UISlider alloc]init]autorelease];
+        self.progress = [[UISlider alloc]init];
         [self.controlView addSubview:self.progress];
         [self.progress addTarget:self action:@selector(updateValue:) forControlEvents:UIControlEventValueChanged];
         [self.progress setThumbImage:thumbImage forState:UIControlStateHighlighted];
