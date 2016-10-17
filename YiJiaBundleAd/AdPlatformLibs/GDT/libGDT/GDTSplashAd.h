@@ -66,6 +66,11 @@
  */
 - (void)splashAdDidDismissFullScreenModal:(GDTSplashAd *)splashAd;
 
+/**
+ * 开屏广告剩余时间回调
+ */
+- (void)splashAdLifeTime:(NSUInteger)time;
+
 @end
 
 @interface GDTSplashAd : NSObject
@@ -114,5 +119,17 @@
  *         bottomView 自定义底部View，可以在此View中设置应用Logo
  */
 -(void)loadAdAndShowInWindow:(UIWindow *)window withBottomView:(UIView *)bottomView;
+
+/**
+ *  广告发起请求并展示在Window中, 同时在屏幕底部设置应用自身的Logo页面或是自定义View,skipView是自定义的“跳过”样式
+ *  详解：[可选]发起拉取广告请求,并将获取的广告以半屏形式展示在传入的Window的上半部，剩余部分展示传入的bottomView
+ *       请注意bottomView需设置好宽高，所占的空间不能过大，并保证广告界面的高度大于360
+ *  skipView
+ *  @param window 展示开屏的容器
+ *         bottomView 自定义底部View，可以在此View中设置应用Logo
+           skipView 自定义”跳过“View.
+ */
+-(void)loadAdAndShowInWindow:(UIWindow *)window withBottomView:(UIView *)bottomView skipView:(UIView *)skipView;
+
 
 @end
