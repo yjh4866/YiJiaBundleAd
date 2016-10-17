@@ -146,6 +146,7 @@
 		FF63F31C1D9110D900155BA7 /* YJBInterstitial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBInterstitial.m; sourceTree = "<group>"; };
 		FF63F31E1D9110EC00155BA7 /* YJBInterstitialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBInterstitialManager.h; sourceTree = "<group>"; };
 		FF63F31F1D9110EC00155BA7 /* YJBInterstitialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBInterstitialManager.m; sourceTree = "<group>"; };
+		FF9E91AA1DB4D70A00C52171 /* YiJiaBundleAd-Release.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "YiJiaBundleAd-Release.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +208,7 @@
 				FF615B151D9254D9005DA068 /* libc++.tbd */,
 				FF615B131D9254CF005DA068 /* CoreLocation.framework */,
 				FF615B0F1D9254A9005DA068 /* libz.tbd */,
+				FF9E91AA1DB4D70A00C52171 /* YiJiaBundleAd-Release.sh */,
 				FF63F2C11D90FF8E00155BA7 /* YiJiaDemo */,
 				FF63F2B21D90FF5400155BA7 /* YiJiaBundleAd */,
 				FF63F2B11D90FF5400155BA7 /* Products */,
