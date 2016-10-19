@@ -67,6 +67,7 @@
         [self loadInterstitial];
     }
     else {
+        self.currentAdapter.interstitialDelegate = self;
         [self.currentAdapter showInterstitial];
     }
 }
@@ -84,6 +85,7 @@
 - (void)yjbAdapterInterstitialLoadSuccess:(YJBAdapter *)yjbAdapter
 {
     if (self.needShow) {
+        self.currentAdapter.interstitialDelegate = self;
         [self.currentAdapter showInterstitial];
     }
 }
@@ -108,6 +110,8 @@
 - (void)yjbAdapterInterstitialCloseFinished:(YJBAdapter *)yjbAdapter
 {
     [self.delegate yjbInterstitialManagerCloseFinished:self];
+    self.currentAdapter.interstitialDelegate = nil;
+    self.currentAdapter = nil;
 }
 
 // 插屏广告被点击
@@ -131,6 +135,7 @@
         // 设置广告参数
         [[YJBConfigData sharedInstance] fillAdParam:self.currentAdapter];
         // 加载插屏广告失败则重新分配广告平台
+        self.currentAdapter.interstitialDelegate = self;
         if (![self.currentAdapter loadInterstitial]) {
             return [self assignAdPlatformAndLoadInterstitial];
         }

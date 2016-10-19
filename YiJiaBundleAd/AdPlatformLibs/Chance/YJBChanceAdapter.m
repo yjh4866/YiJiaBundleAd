@@ -208,15 +208,17 @@ loadAdFailureWithError:(CSError *)csError
     self.csBannerView = nil;
     //
     NSError *error = [NSError errorWithDomain:@"YiJiaBundle" code:0 userInfo:@{NSLocalizedDescriptionKey: @"超时"}];
-    [self.bannerDelegate yjbAdapter:self bannerShowFailure:error];
+    __weak id delegate = self.bannerDelegate;
     self.bannerDelegate = nil;
+    [delegate yjbAdapter:self bannerShowFailure:error];
 }
 
 - (void)loadInterstitialTimeout
 {
     NSError *error = [NSError errorWithDomain:@"YiJiaBundle" code:0 userInfo:@{NSLocalizedDescriptionKey: @"超时"}];
-    [self.interstitialDelegate yjbAdapter:self interstitialLoadFailure:error];
+    __weak id delegate = self.interstitialDelegate;
     self.interstitialDelegate = nil;
+    [delegate yjbAdapter:self interstitialLoadFailure:error];
 }
 
 @end
