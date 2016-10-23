@@ -10,7 +10,7 @@
 #import "YJBAdmobAdapter.h"
 #import "YJBBaiDuAdapter.h"
 #import "YJBChanceAdapter.h"
-#import "YJBGDTAdapter.h"
+//#import "YJBGDTAdapter.h"
 
 @interface YJBAdapterManager ()
 @property (nonatomic, strong) NSDictionary *dicPlatformTypeName;
@@ -60,7 +60,7 @@
             adapter = [YJBChanceAdapter sharedInstance];
             break;
         case YJBAdPlatform_GDT:
-            adapter = [YJBGDTAdapter sharedInstance];
+//            adapter = [YJBGDTAdapter sharedInstance];
             break;
         default:
             break;
