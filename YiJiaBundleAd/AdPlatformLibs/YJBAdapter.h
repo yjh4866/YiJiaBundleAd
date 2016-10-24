@@ -11,7 +11,7 @@
 
 typedef NS_ENUM(unsigned int, YJBAdPlatform) {
     YJBAdPlatform_Total,
-    YJBAdPlatform_None,
+    YJBAdPlatform_None = 0,
     YJBAdPlatform_Admob,
     YJBAdPlatform_BaiDu,
     YJBAdPlatform_Chance,

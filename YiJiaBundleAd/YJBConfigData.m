@@ -196,13 +196,6 @@
                 _bannerWeights[YJBAdPlatform_Chance] = [NSString stringWithFormat:@"%@", dic[@"bw"]].intValue;
                 _popupWeights[YJBAdPlatform_Chance] = [NSString stringWithFormat:@"%@", dic[@"iw"]].intValue;
             }
-            // 解析无广告权重
-            dic = dicConfig[@"None"];
-            if ([dic isKindOfClass:NSDictionary.class]) {
-                // 权重处理
-                _bannerWeights[YJBAdPlatform_None] = [NSString stringWithFormat:@"%@", dic[@"bw"]].intValue;
-                _popupWeights[YJBAdPlatform_None] = [NSString stringWithFormat:@"%@", dic[@"iw"]].intValue;
-            }
             // 权重求和
             _bannerWeights[YJBAdPlatform_Total] = 0;
             for (int i = 1; i < YJBAdPlatform_Count; i++) {

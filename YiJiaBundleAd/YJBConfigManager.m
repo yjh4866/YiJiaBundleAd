@@ -24,7 +24,7 @@
 - (YJBAdPlatform)reassignPlatformForBannerAndExclude:(YJBAdPlatform)exclude
 {
     // 权重调整
-    if (exclude >= YJBAdPlatform_None && exclude < YJBAdPlatform_Count) {
+    if (exclude > YJBAdPlatform_None && exclude < YJBAdPlatform_Count) {
         _bannerWeights[0] -= _bannerWeights[exclude];
         _bannerWeights[exclude] = 0;
     }
@@ -38,7 +38,7 @@
 - (YJBAdPlatform)reassignPlatformForInterstitialAndExclude:(YJBAdPlatform)exclude
 {
     // 权重调整
-    if (exclude >= YJBAdPlatform_None && exclude < YJBAdPlatform_Count) {
+    if (exclude > YJBAdPlatform_None && exclude < YJBAdPlatform_Count) {
         _popupWeights[0] -= _popupWeights[exclude];
         _popupWeights[exclude] = 0;
     }

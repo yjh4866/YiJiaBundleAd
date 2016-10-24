@@ -101,10 +101,6 @@
             return [self assignAdPlatformAndShowBanner];
         }
     }
-    // 分配到不显示广告，按展现成功算，以便继续后续广告请求
-    else if (YJBAdPlatform_None == platformType) {
-        [self.delegate yjbBannerManagerShowSuccess:self];
-    }
     else {
         return NO;
     }

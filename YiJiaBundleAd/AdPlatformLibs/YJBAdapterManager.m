@@ -22,8 +22,7 @@
     self = [super init];
     if (self) {
         // 平台类型与平台名称对应表
-        self.dicPlatformTypeName = @{@(YJBAdPlatform_None): @"无广告",
-                                     @(YJBAdPlatform_Admob): @"Admob",
+        self.dicPlatformTypeName = @{@(YJBAdPlatform_Admob): @"Admob",
                                      @(YJBAdPlatform_BaiDu): @"百度",
                                      @(YJBAdPlatform_Chance): @"畅思"};
     }
