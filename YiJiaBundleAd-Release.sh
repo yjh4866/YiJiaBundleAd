@@ -18,8 +18,8 @@ xcodebuild OTHER_CFLAGS="-fembed-bitcode" -target YiJiaBundleAd -configuration R
 xcodebuild -target YiJiaBundleAd -configuration Release -sdk iphonesimulator -arch i386 -arch x86_64
 echo "Target build完毕"
 
-# 创建SDK目录
-mkdir $path_destination
+## 创建SDK目录
+#mkdir $path_destination
 
 # 普通版本
 rm -rf $path_destination"/libYiJiaBundleAd"

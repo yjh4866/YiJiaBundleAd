@@ -10,7 +10,6 @@
 #import "YJBAdmobAdapter.h"
 #import "YJBBaiDuAdapter.h"
 #import "YJBChanceAdapter.h"
-//#import "YJBGDTAdapter.h"
 
 @interface YJBAdapterManager ()
 @property (nonatomic, strong) NSDictionary *dicPlatformTypeName;
@@ -26,8 +25,7 @@
         self.dicPlatformTypeName = @{@(YJBAdPlatform_None): @"无广告",
                                      @(YJBAdPlatform_Admob): @"Admob",
                                      @(YJBAdPlatform_BaiDu): @"百度",
-                                     @(YJBAdPlatform_Chance): @"畅思",
-                                     @(YJBAdPlatform_GDT): @"广点通"};
+                                     @(YJBAdPlatform_Chance): @"畅思"};
     }
     return self;
 }
@@ -58,9 +56,6 @@
             break;
         case YJBAdPlatform_Chance:
             adapter = [YJBChanceAdapter sharedInstance];
-            break;
-        case YJBAdPlatform_GDT:
-//            adapter = [YJBGDTAdapter sharedInstance];
             break;
         default:
             break;

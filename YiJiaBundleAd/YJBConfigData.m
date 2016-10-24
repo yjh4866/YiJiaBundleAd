@@ -21,7 +21,6 @@
 @property (nonatomic, strong) NSDictionary *dicAdmobConfig;
 @property (nonatomic, strong) NSDictionary *dicBaiDuConfig;
 @property (nonatomic, strong) NSDictionary *dicChanceConfig;
-@property (nonatomic, strong) NSDictionary *dicGDTConfig;
 
 @property (nonatomic, assign) NSTimeInterval timeConfig;
 @end
@@ -121,9 +120,6 @@
         case YJBAdPlatform_Chance:
             [yjbAdapter setAdParams:self.dicChanceConfig];
             break;
-        case YJBAdPlatform_GDT:
-            [yjbAdapter setAdParams:self.dicGDTConfig];
-            break;
         default:
             break;
     }
@@ -200,14 +196,6 @@
                 _bannerWeights[YJBAdPlatform_Chance] = [NSString stringWithFormat:@"%@", dic[@"bw"]].intValue;
                 _popupWeights[YJBAdPlatform_Chance] = [NSString stringWithFormat:@"%@", dic[@"iw"]].intValue;
             }
-            // 解析广点通平台参数
-            dic = dicConfig[@"GDT"];
-            if ([dic isKindOfClass:NSDictionary.class]) {
-                self.dicGDTConfig = dic;
-                // 权重处理
-                _bannerWeights[YJBAdPlatform_GDT] = [NSString stringWithFormat:@"%@", dic[@"bw"]].intValue;
-                _popupWeights[YJBAdPlatform_GDT] = [NSString stringWithFormat:@"%@", dic[@"iw"]].intValue;
-            }
             // 解析无广告权重
             dic = dicConfig[@"None"];
             if ([dic isKindOfClass:NSDictionary.class]) {
@@ -216,13 +204,13 @@
                 _popupWeights[YJBAdPlatform_None] = [NSString stringWithFormat:@"%@", dic[@"iw"]].intValue;
             }
             // 权重求和
-            _bannerWeights[0] = 0;
+            _bannerWeights[YJBAdPlatform_Total] = 0;
             for (int i = 1; i < YJBAdPlatform_Count; i++) {
-                _bannerWeights[0] += _bannerWeights[i];
+                _bannerWeights[YJBAdPlatform_Total] += _bannerWeights[i];
             }
-            _popupWeights[0] = 0;
+            _popupWeights[YJBAdPlatform_Total] = 0;
             for (int i = 1; i < YJBAdPlatform_Count; i++) {
-                _popupWeights[0] += _popupWeights[i];
+                _popupWeights[YJBAdPlatform_Total] += _popupWeights[i];
             }
             return YES;
         }

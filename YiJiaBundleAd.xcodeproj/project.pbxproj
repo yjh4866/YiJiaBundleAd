@@ -77,8 +77,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B17B35721D96552900D94390 /* YJBGDTAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBGDTAdapter.h; sourceTree = "<group>"; };
-		B17B35731D96552900D94390 /* YJBGDTAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBGDTAdapter.m; sourceTree = "<group>"; };
 		FF615B0F1D9254A9005DA068 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		FF615B131D9254CF005DA068 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FF615B151D9254D9005DA068 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -169,15 +167,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B17B35691D96550200D94390 /* GDT */ = {
-			isa = PBXGroup;
-			children = (
-				B17B35721D96552900D94390 /* YJBGDTAdapter.h */,
-				B17B35731D96552900D94390 /* YJBGDTAdapter.m */,
-			);
-			path = GDT;
-			sourceTree = "<group>";
-		};
 		FF63F2A71D90FF5400155BA7 = {
 			isa = PBXGroup;
 			children = (
@@ -248,7 +237,6 @@
 				FF63F2DA1D91015B00155BA7 /* Admob */,
 				FF63F2DE1D91015B00155BA7 /* BaiDu */,
 				FF63F2E11D91015B00155BA7 /* Chance */,
-				B17B35691D96550200D94390 /* GDT */,
 				FF63F2F51D91017D00155BA7 /* YJBAdapter.h */,
 				FF63F2F61D91017D00155BA7 /* YJBAdapter.m */,
 				FF63F2F81D91019A00155BA7 /* YJBAdapterManager.h */,
