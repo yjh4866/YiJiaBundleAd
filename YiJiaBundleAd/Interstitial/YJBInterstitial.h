@@ -12,6 +12,9 @@
 
 @interface YJBInterstitial : NSObject
 
+// 关闭时是否加载下一个广告，默认为YES
+@property (nonatomic, assign) BOOL loadNextWhenClose;
+
 @property (nonatomic, weak) id<YJBInterstitialDelegate> delegate;
 
 + (instancetype)sharedInstance;

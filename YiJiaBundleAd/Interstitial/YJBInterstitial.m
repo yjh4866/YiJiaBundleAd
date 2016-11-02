@@ -20,6 +20,7 @@
 {
     self = [super init];
     if (self) {
+        self.loadNextWhenClose = YES;
         self.adManager = [[YJBInterstitialManager alloc] init];
     }
     return self;
@@ -89,6 +90,11 @@
 {
     if ([self.delegate respondsToSelector:@selector(yjbInterstitialCloseFinished)]) {
         [self.delegate yjbInterstitialCloseFinished];
+    }
+    
+    // 是否预加载下一个广告
+    if (self.loadNextWhenClose) {
+        [self loadInterstitial];
     }
 }
 
