@@ -67,7 +67,7 @@ typedef void (^CSInterstitialDidDismiss)();
 // 插屏广告打开完成的block
 @property (nonatomic, copy) CSInterstitialDidPresent didPresent;
 // 插屏广告倒计时结束的block
-@property (nonatomic, copy) CSInterstitialCountDownFinished countDownFinished;
+@property (nonatomic, copy) CSInterstitialCountDownFinished countdownFinished;
 // 插屏广告将要关闭的block
 @property (nonatomic, copy) CSInterstitialWillDismiss willDismiss;
 // 插屏广告关闭完成的block
@@ -82,16 +82,25 @@ typedef void (^CSInterstitialDidDismiss)();
 - (void)loadInterstitial;
 
 /**
- *	@brief	显示插屏广告
+ *	@brief	显示插屏广告，带动画的弹出
  */
 - (void)showInterstitial;
 
 /**
  *	@brief	显示插屏广告
  *
- *	@param 	rootView 	插屏广告的父视图
+ *	@param 	viewController 	显示插屏广告用的UIViewController
+ *	@param 	animation 	是否动画展现
  */
-- (void)showInterstitialOnRootView:(UIView *)rootView;
+- (void)showInterstitial:(UIViewController *)viewController animation:(BOOL)animation;
+
+/**
+ *	@brief	显示插屏广告
+ *
+ *	@param 	rootView 	插屏广告的父视图
+ *	@param 	animation 	是否动画展现
+ */
+- (void)showInterstitialOnRootView:(UIView *)rootView animation:(BOOL)animation;
 
 /**
  *	@brief	用插屏广告填充view

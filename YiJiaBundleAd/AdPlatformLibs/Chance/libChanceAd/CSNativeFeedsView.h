@@ -29,6 +29,7 @@
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame andNativeFeedsItem:(CSNativeFeedsItem *)item;
 
+#warning 这个方法必须要调用哈。该视图展现在屏幕上时调用
 - (void)showAD;
 
 @end

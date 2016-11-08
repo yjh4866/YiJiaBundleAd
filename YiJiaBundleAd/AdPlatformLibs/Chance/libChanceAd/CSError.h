@@ -10,6 +10,8 @@
 #define CSError_h
 #import <Foundation/Foundation.h>
 
+extern NSString *const ChanceErrorDomain;
+
 typedef NS_ENUM(unsigned int, CSErrorCode) {
     // 1000~1999 为服务器端错误
     CSErrorCode_Success,
