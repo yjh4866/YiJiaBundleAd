@@ -151,7 +151,7 @@
         if (UIUserInterfaceIdiomPhone == deviceType) {
             dicConfig = dicConfig[@"iPhone"];
         }
-        else if (UIUserInterfaceIdiomPhone == deviceType) {
+        else if (UIUserInterfaceIdiomPad == deviceType) {
             dicConfig = dicConfig[@"iPad"];
         }
         else {

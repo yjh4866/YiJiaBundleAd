@@ -22,7 +22,7 @@
     [YiJiaBundleAd setTestDevicesForAdmob:@[@"232438c1ecfe57ce4f5fa05015ced793"]];
     [YJBInterstitial sharedInstance].delegate = self;
     
-    YJBBannerView *bannerView = [[YJBBannerView alloc] initWithFrame:CGRectZero];
+    YJBBannerView *bannerView = [[YJBBannerView alloc] initWithFrame:CGRectMake(0, 160, 0, 0)];
     bannerView.delegate = self;
     [self.view addSubview:bannerView];
     [bannerView startAd];
