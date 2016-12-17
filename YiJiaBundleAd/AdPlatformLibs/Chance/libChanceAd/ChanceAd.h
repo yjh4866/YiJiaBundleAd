@@ -12,7 +12,8 @@
 
 
 // SDK_Version仅供参考，以[ChanceAd sdkVersion];得到的版本号为准
-#define SDK_Version  @"6.4.2"
+#define SDK_Version  @"6.4.3"
+#define Key_UseHttps    @"UseHttps"
 
 
 @interface ChanceAd : NSObject
@@ -50,6 +51,11 @@
  *  @return 越狱设备返回YES
  */
 + (BOOL)isJailBroken;
+/**
+ * @brief    是否使用https协议，默认使用
+ * @param    ishttps    YES表示使用https协议，NO表示不使用
+ */
++ (void)useHttps:(BOOL)ishttps;
 
 @end
 

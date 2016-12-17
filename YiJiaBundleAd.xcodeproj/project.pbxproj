@@ -10,7 +10,6 @@
 		FF615B0E1D92548C005DA068 /* libYiJiaBundleAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63F2B01D90FF5400155BA7 /* libYiJiaBundleAd.a */; };
 		FF615B101D9254A9005DA068 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FF615B0F1D9254A9005DA068 /* libz.tbd */; };
 		FF615B111D9254C0005DA068 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63F2DD1D91015B00155BA7 /* GoogleMobileAds.framework */; };
-		FF615B121D9254C0005DA068 /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63F2E01D91015B00155BA7 /* BaiduMobAdSDK.framework */; };
 		FF615B141D9254CF005DA068 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF615B131D9254CF005DA068 /* CoreLocation.framework */; };
 		FF615B161D9254D9005DA068 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FF615B151D9254D9005DA068 /* libc++.tbd */; };
 		FF615B191D925C9B005DA068 /* YJBConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF615B181D925C9B005DA068 /* YJBConfigManager.m */; };
@@ -24,12 +23,10 @@
 		FF63F2CF1D90FF8E00155BA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF63F2CE1D90FF8E00155BA7 /* Assets.xcassets */; };
 		FF63F2D21D90FF8E00155BA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF63F2D01D90FF8E00155BA7 /* LaunchScreen.storyboard */; };
 		FF63F2F11D91015B00155BA7 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63F2DD1D91015B00155BA7 /* GoogleMobileAds.framework */; };
-		FF63F2F21D91015B00155BA7 /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63F2E01D91015B00155BA7 /* BaiduMobAdSDK.framework */; };
 		FF63F2F41D91015B00155BA7 /* libChanceAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF63F2EF1D91015B00155BA7 /* libChanceAd.a */; };
 		FF63F2F71D91017D00155BA7 /* YJBAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2F61D91017D00155BA7 /* YJBAdapter.m */; };
 		FF63F2FA1D91019A00155BA7 /* YJBAdapterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2F91D91019A00155BA7 /* YJBAdapterManager.m */; };
 		FF63F2FD1D9101C600155BA7 /* YJBAdmobAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2FC1D9101C600155BA7 /* YJBAdmobAdapter.m */; };
-		FF63F3001D9101E300155BA7 /* YJBBaiDuAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F2FF1D9101E300155BA7 /* YJBBaiDuAdapter.m */; };
 		FF63F3031D9101F000155BA7 /* YJBChanceAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F3021D9101F000155BA7 /* YJBChanceAdapter.m */; };
 		FF63F3081D91039C00155BA7 /* YJBConfigData.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F3071D91039C00155BA7 /* YJBConfigData.m */; };
 		FF63F3121D9105DA00155BA7 /* NBLHTTPFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F30C1D9105DA00155BA7 /* NBLHTTPFileManager.m */; };
@@ -40,8 +37,6 @@
 		FF63F31D1D9110D900155BA7 /* YJBInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F31C1D9110D900155BA7 /* YJBInterstitial.m */; };
 		FF63F3201D9110EC00155BA7 /* YJBInterstitialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF63F31F1D9110EC00155BA7 /* YJBInterstitialManager.m */; };
 		FF63F3211D91145A00155BA7 /* GoogleMobileAds.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF63F2DD1D91015B00155BA7 /* GoogleMobileAds.framework */; };
-		FF63F3221D91145A00155BA7 /* baidumobadsdk.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF63F2DF1D91015B00155BA7 /* baidumobadsdk.bundle */; };
-		FF63F3231D91145A00155BA7 /* BaiduMobAdSDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF63F2E01D91015B00155BA7 /* BaiduMobAdSDK.framework */; };
 		FF63F3241D91145A00155BA7 /* ChanceAdRes.bundle in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF63F2E61D91015B00155BA7 /* ChanceAdRes.bundle */; };
 		FF63F3251D91146700155BA7 /* YJBBannerView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF63F3151D9110A400155BA7 /* YJBBannerView.h */; };
 		FF63F3261D91146700155BA7 /* YJBInterstitial.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FF63F31B1D9110D900155BA7 /* YJBInterstitial.h */; };
@@ -67,8 +62,6 @@
 				FF63F3251D91146700155BA7 /* YJBBannerView.h in CopyFiles */,
 				FF63F3261D91146700155BA7 /* YJBInterstitial.h in CopyFiles */,
 				FF63F3211D91145A00155BA7 /* GoogleMobileAds.framework in CopyFiles */,
-				FF63F3221D91145A00155BA7 /* baidumobadsdk.bundle in CopyFiles */,
-				FF63F3231D91145A00155BA7 /* BaiduMobAdSDK.framework in CopyFiles */,
 				FF63F3241D91145A00155BA7 /* ChanceAdRes.bundle in CopyFiles */,
 				FF63F2B41D90FF5400155BA7 /* YiJiaBundleAd.h in CopyFiles */,
 			);
@@ -97,8 +90,6 @@
 		FF63F2D11D90FF8E00155BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF63F2D31D90FF8E00155BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF63F2DD1D91015B00155BA7 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		FF63F2DF1D91015B00155BA7 /* baidumobadsdk.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = baidumobadsdk.bundle; sourceTree = "<group>"; };
-		FF63F2E01D91015B00155BA7 /* BaiduMobAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMobAdSDK.framework; sourceTree = "<group>"; };
 		FF63F2E51D91015B00155BA7 /* ChanceAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChanceAd.h; sourceTree = "<group>"; };
 		FF63F2E61D91015B00155BA7 /* ChanceAdRes.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ChanceAdRes.bundle; sourceTree = "<group>"; };
 		FF63F2E71D91015B00155BA7 /* CSADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSADRequest.h; sourceTree = "<group>"; };
@@ -116,8 +107,6 @@
 		FF63F2F91D91019A00155BA7 /* YJBAdapterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBAdapterManager.m; sourceTree = "<group>"; };
 		FF63F2FB1D9101C600155BA7 /* YJBAdmobAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBAdmobAdapter.h; sourceTree = "<group>"; };
 		FF63F2FC1D9101C600155BA7 /* YJBAdmobAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBAdmobAdapter.m; sourceTree = "<group>"; };
-		FF63F2FE1D9101E300155BA7 /* YJBBaiDuAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBBaiDuAdapter.h; sourceTree = "<group>"; };
-		FF63F2FF1D9101E300155BA7 /* YJBBaiDuAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBBaiDuAdapter.m; sourceTree = "<group>"; };
 		FF63F3011D9101F000155BA7 /* YJBChanceAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBChanceAdapter.h; sourceTree = "<group>"; };
 		FF63F3021D9101F000155BA7 /* YJBChanceAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBChanceAdapter.m; sourceTree = "<group>"; };
 		FF63F3061D91039C00155BA7 /* YJBConfigData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBConfigData.h; sourceTree = "<group>"; };
@@ -146,7 +135,6 @@
 			files = (
 				FF63F2F11D91015B00155BA7 /* GoogleMobileAds.framework in Frameworks */,
 				FF63F2F41D91015B00155BA7 /* libChanceAd.a in Frameworks */,
-				FF63F2F21D91015B00155BA7 /* BaiduMobAdSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +147,6 @@
 				FF615B141D9254CF005DA068 /* CoreLocation.framework in Frameworks */,
 				FF615B101D9254A9005DA068 /* libz.tbd in Frameworks */,
 				FF615B111D9254C0005DA068 /* GoogleMobileAds.framework in Frameworks */,
-				FF615B121D9254C0005DA068 /* BaiduMobAdSDK.framework in Frameworks */,
 				FF615B0E1D92548C005DA068 /* libYiJiaBundleAd.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				FF63F2DA1D91015B00155BA7 /* Admob */,
-				FF63F2DE1D91015B00155BA7 /* BaiDu */,
 				FF63F2E11D91015B00155BA7 /* Chance */,
 				FF63F2F51D91017D00155BA7 /* YJBAdapter.h */,
 				FF63F2F61D91017D00155BA7 /* YJBAdapter.m */,
@@ -253,17 +239,6 @@
 				FF63F2FC1D9101C600155BA7 /* YJBAdmobAdapter.m */,
 			);
 			path = Admob;
-			sourceTree = "<group>";
-		};
-		FF63F2DE1D91015B00155BA7 /* BaiDu */ = {
-			isa = PBXGroup;
-			children = (
-				FF63F2DF1D91015B00155BA7 /* baidumobadsdk.bundle */,
-				FF63F2E01D91015B00155BA7 /* BaiduMobAdSDK.framework */,
-				FF63F2FE1D9101E300155BA7 /* YJBBaiDuAdapter.h */,
-				FF63F2FF1D9101E300155BA7 /* YJBBaiDuAdapter.m */,
-			);
-			path = BaiDu;
 			sourceTree = "<group>";
 		};
 		FF63F2E11D91015B00155BA7 /* Chance */ = {
@@ -397,6 +372,7 @@
 					};
 					FF63F2BF1D90FF8E00155BA7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = Y3UD3PVDBM;
 					};
 				};
 			};
@@ -442,7 +418,6 @@
 				FF63F2FD1D9101C600155BA7 /* YJBAdmobAdapter.m in Sources */,
 				FF63F3171D9110A400155BA7 /* YJBBannerView.m in Sources */,
 				FF63F31A1D9110C700155BA7 /* YJBBannerManager.m in Sources */,
-				FF63F3001D9101E300155BA7 /* YJBBaiDuAdapter.m in Sources */,
 				FF63F3141D9105DA00155BA7 /* UIImageView+NBL.m in Sources */,
 				FF63F3131D9105DA00155BA7 /* NBLHTTPManager.m in Sources */,
 				FF63F31D1D9110D900155BA7 /* YJBInterstitial.m in Sources */,
@@ -583,7 +558,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/Admob",
-					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/BaiDu",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -602,7 +576,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/Admob",
-					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/BaiDu",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -619,10 +592,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y3UD3PVDBM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/Admob",
-					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/BaiDu",
 				);
 				INFOPLIST_FILE = YiJiaDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -638,10 +611,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y3UD3PVDBM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/Admob",
-					"$(PROJECT_DIR)/YiJiaBundleAd/AdPlatformLibs/BaiDu",
 				);
 				INFOPLIST_FILE = YiJiaDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

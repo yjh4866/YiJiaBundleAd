@@ -8,7 +8,6 @@
 
 #import "YJBAdapterManager.h"
 #import "YJBAdmobAdapter.h"
-#import "YJBBaiDuAdapter.h"
 #import "YJBChanceAdapter.h"
 
 @interface YJBAdapterManager ()
@@ -23,7 +22,6 @@
     if (self) {
         // 平台类型与平台名称对应表
         self.dicPlatformTypeName = @{@(YJBAdPlatform_Admob): @"Admob",
-                                     @(YJBAdPlatform_BaiDu): @"百度",
                                      @(YJBAdPlatform_Chance): @"畅思"};
     }
     return self;
@@ -49,9 +47,6 @@
     switch (platformType) {
         case YJBAdPlatform_Admob:
             adapter = [YJBAdmobAdapter sharedInstance];
-            break;
-        case YJBAdPlatform_BaiDu:
-            adapter = [YJBBaiDuAdapter sharedInstance];
             break;
         case YJBAdPlatform_Chance:
             adapter = [YJBChanceAdapter sharedInstance];

@@ -114,9 +114,6 @@
         case YJBAdPlatform_Admob:
             [yjbAdapter setAdParams:self.dicAdmobConfig];
             break;
-        case YJBAdPlatform_BaiDu:
-            [yjbAdapter setAdParams:self.dicBaiDuConfig];
-            break;
         case YJBAdPlatform_Chance:
             [yjbAdapter setAdParams:self.dicChanceConfig];
             break;
@@ -179,14 +176,6 @@
                 // 权重处理
                 _bannerWeights[YJBAdPlatform_Admob] = [NSString stringWithFormat:@"%@", dic[@"bw"]].intValue;
                 _popupWeights[YJBAdPlatform_Admob] = [NSString stringWithFormat:@"%@", dic[@"iw"]].intValue;
-            }
-            // 解析百度平台参数
-            dic = dicConfig[@"BaiDu"];
-            if ([dic isKindOfClass:NSDictionary.class]) {
-                self.dicBaiDuConfig = dic;
-                // 权重处理
-                _bannerWeights[YJBAdPlatform_BaiDu] = [NSString stringWithFormat:@"%@", dic[@"bw"]].intValue;
-                _popupWeights[YJBAdPlatform_BaiDu] = [NSString stringWithFormat:@"%@", dic[@"iw"]].intValue;
             }
             // 解析畅思平台参数
             dic = dicConfig[@"Chance"];
